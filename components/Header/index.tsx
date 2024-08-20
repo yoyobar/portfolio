@@ -5,6 +5,12 @@ import { motion } from 'framer-motion';
 import { FaLongArrowAltDown } from 'react-icons/fa';
 import { TypeAnimation } from 'react-type-animation';
 const Header = () => {
+    const aboutHandler = () => {
+        document.querySelector('.about-container')?.scrollIntoView({
+            behavior: 'smooth',
+        });
+    };
+
     return (
         <>
             <Title />
@@ -31,13 +37,15 @@ const Header = () => {
                     />
                 </div>
                 <motion.button
+                    onClick={aboutHandler}
                     whileTap={{ translateY: 10 }}
                     whileHover={{ scale: 1.05 }}
-                    className="mt-10 bg-rose-500  p-3 text-xl rounded-md flex justify-center items-center gap-2"
+                    className=" mt-10 bg-rose-500  p-3 text-xl rounded-md flex justify-center items-center gap-2"
                 >
                     Read More
                     <FaLongArrowAltDown />
                 </motion.button>
+                <div className="about-container"></div>
             </div>
         </>
     );

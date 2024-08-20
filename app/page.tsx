@@ -1,10 +1,13 @@
-import Header from '@/components/Header';
+import About from '@/components/about';
+import Header from '@/components/header';
+import Skill from '@/components/skill';
 
 export default function Home() {
     return (
-        <div className="">
+        <div className="h-[200vh]">
             <Header />
-            <div className="h-[200vh]"></div>
+            <About />
+            <Skill />
         </div>
     );
 }
