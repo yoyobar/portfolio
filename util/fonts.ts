@@ -11,3 +11,9 @@ export const coding = localFont({
     display: 'swap',
     variable: '--font-coding',
 });
+
+export const aggro = localFont({
+    src: '../public/fonts/SBAggroB.woff',
+    display: 'swap',
+    variable: '--font-aggro',
+});

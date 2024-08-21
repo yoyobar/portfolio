@@ -58,7 +58,7 @@ const Header = () => {
         <>
             <div
                 className={tw(
-                    'px-10 lg:px-[130px] fixed z-50 w-full h-16 flex items-center justify-between bg-slate-900 bg-opacity-75',
+                    'select-none px-10 lg:px-[130px] fixed z-50 w-full h-16 flex items-center justify-between bg-slate-900 bg-opacity-75',
                     coding.className
                 )}
             >

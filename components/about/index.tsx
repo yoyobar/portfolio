@@ -11,8 +11,8 @@ const About = () => {
 
     return (
         <>
-            <div className="w-full py-32 flex justify-center items-center">
-                <div className="max-w-[1400px] w-full flex flex-col items-center justify-center">
+            <div className="w-full py-32 flex justify-center items-center bg-white">
+                <div className="max-w-[1400px] mb-20 w-full flex flex-col items-center justify-center">
                     <div className="flex gap-2 relative justify-center items-center">
                         <div onClick={scrollHandler} className="cursor-pointer w-[25px] h-[25px]">
                             <IoIosLink className="w-full h-full text-gray-600 hover:text-black" />

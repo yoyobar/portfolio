@@ -1,5 +1,5 @@
 'use client';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import { FaAngleDoubleUp } from 'react-icons/fa';
 
@@ -14,14 +14,9 @@ const ScrollController = () => {
     };
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                setIsInView(entry.intersectionRatio >= 0.1);
-            },
-            {
-                threshold: 0.1,
-            }
-        );
+        const observer = new IntersectionObserver(([entry]) => {
+            setIsInView(!entry.intersectionRatio);
+        });
 
         const targetElement = document.querySelector('.scroll-end');
 
@@ -43,7 +38,7 @@ const ScrollController = () => {
                 whileHover={{ opacity: 1 }}
                 whileTap={{ translateY: -20 }}
                 transition={{ type: 'spring' }}
-                className="fixed cursor-pointer flex justify-center items-center w-12 h-12 bottom-5 right-5 bg-gray-600 opacity-75 rounded-sm"
+                className="fixed z-50 cursor-pointer flex justify-center items-center w-12 h-12 bottom-5 right-5 bg-gray-600 opacity-75 rounded-sm"
             >
                 <FaAngleDoubleUp className="text-gray-100 text-2xl" />
             </motion.button>
