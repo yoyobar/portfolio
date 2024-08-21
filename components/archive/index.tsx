@@ -43,7 +43,7 @@ const Archive = () => {
                             onClick={githubHandler}
                             whileHover={{ translateY: -5 }}
                             animate={{ opacity: inViewSection ? 1 : 0 }}
-                            className="bg-white cursor-pointer select-none w-[400px] h-[315px] rounded-md p-4 px-8 flex flex-col gap-4"
+                            className="bg-white relative z-10 cursor-pointer select-none w-[400px] h-[315px] rounded-md p-4 px-8 flex flex-col gap-4"
                         >
                             <div className="flex gap-4 text-2xl items-center">
                                 <FaGithub className="w-12 h-12" />
@@ -74,7 +74,7 @@ const Archive = () => {
                             onClick={blogHandler}
                             animate={{ opacity: inViewSection ? 1 : 0 }}
                             whileHover={{ translateY: -5 }}
-                            className="bg-white cursor-pointer select-none w-[400px] h-[315px] rounded-md p-4 px-8 flex flex-col gap-4"
+                            className="relative z-10 bg-white cursor-pointer select-none w-[400px] h-[315px] rounded-md p-4 px-8 flex flex-col gap-4"
                         >
                             <div className="flex gap-4 text-2xl items-center">
                                 <SiNextdotjs className="w-12 h-12" />
@@ -99,7 +99,7 @@ const Archive = () => {
                         </motion.div>
                     </div>
                 </div>
-                <div className="hidden 2xl:flex absolute text-[200px] -rotate-[14deg] -right-10 -bottom-14 text-white opacity-50 gap-2">
+                <div className="hidden select-none 2xl:flex absolute text-[200px] -rotate-[14deg] -right-10 -bottom-14 text-white opacity-50 gap-2">
                     <span className={coding.className}>ARCHIVES</span>
                     <span className="animate-flick">|</span>
                 </div>

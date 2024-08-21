@@ -24,14 +24,13 @@ const Skill = () => {
                     <SkillList title="Front-End" data={constData.skillDataFE} />
 
                     <SkillList title="Back-End" data={constData.skillDataBE} />
-
                     <SkillList title="Version Control" data={constData.skillDataVC} />
 
                     <SkillList title="Communication" data={constData.skillDataCM} />
 
                     <SkillList title="Deployment" data={constData.skillDataDP} />
                 </div>
-                <div className="hidden 2xl:flex absolute text-[200px] -rotate-[-14deg] -left-10 -bottom-14 text-white opacity-50 gap-2">
+                <div className="select-none hidden 2xl:flex absolute text-[200px] -rotate-[-14deg] -left-10 -bottom-14 text-white opacity-50 gap-2">
                     <span className={coding.className}>SKILLS</span>
                     <span className="animate-flick">|</span>
                 </div>

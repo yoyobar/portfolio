@@ -1,63 +1,139 @@
 'use client';
-import React from 'react';
-import Title from './Title';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaLongArrowAltDown } from 'react-icons/fa';
-import { TypeAnimation } from 'react-type-animation';
-import { coding } from '@/util/fonts';
+import { RxHamburgerMenu } from 'react-icons/rx';
+import { IoMdClose } from 'react-icons/io'; // Close icon
 import { twMerge as tw } from 'tailwind-merge';
+import { coding } from '@/util/fonts';
+
+const list = {
+    open: { opacity: 1, x: 0 },
+    closed: { opacity: 0, x: 0 },
+};
+
 const Header = () => {
-    const aboutHandler = () => {
+    const [isMenuOpen, setMenuOpen] = useState(false);
+
+    const scrollTopHandler = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+        setMenuOpen(false);
+    };
+
+    const aboutScrollHandler = () => {
         document.querySelector('.about-container')?.scrollIntoView({
             behavior: 'smooth',
         });
+        setMenuOpen(false);
+    };
+
+    const skillScrollHandler = () => {
+        document.querySelector('.skill-container')?.scrollIntoView({
+            behavior: 'smooth',
+        });
+        setMenuOpen(false);
+    };
+
+    const archiveScrollHandler = () => {
+        document.querySelector('.archive-container')?.scrollIntoView({
+            behavior: 'smooth',
+        });
+        setMenuOpen(false);
+    };
+    const projectScrollHandler = () => {
+        document.querySelector('.project-container')?.scrollIntoView({
+            behavior: 'smooth',
+        });
+
+        setMenuOpen(false);
+    };
+
+    const toggleMenu = () => {
+        setMenuOpen(!isMenuOpen);
     };
 
     return (
         <>
-            <Title />
-            <div className="pt-[64px] h-[520px] w-full bg-slate-900 flex flex-col justify-center items-center text-slate-100 relative">
-                <div className="text-white text-[60px] font-extrabold">
-                    <span className="text-rose-500">FE</span> {` Developer`}
+            <div
+                className={tw(
+                    'px-10 lg:px-[130px] fixed z-50 w-full h-16 flex items-center justify-between bg-slate-900 bg-opacity-75',
+                    coding.className
+                )}
+            >
+                <div
+                    onClick={scrollTopHandler}
+                    className="hover:text-white cursor-pointer text-2xl font-semibold text-gray-200"
+                >{`PortFolio`}</div>
+                <div className="hidden lg:flex gap-10">
+                    <div
+                        onClick={aboutScrollHandler}
+                        className="hover:text-rose-500 cursor-pointer text-gray-200 font-medium"
+                    >
+                        About me
+                    </div>
+                    <div
+                        onClick={skillScrollHandler}
+                        className="hover:text-rose-500 cursor-pointer text-gray-200 font-medium"
+                    >
+                        Skills
+                    </div>
+                    <div
+                        onClick={archiveScrollHandler}
+                        className="hover:text-rose-500 cursor-pointer text-gray-200 font-medium"
+                    >
+                        Archives
+                    </div>
+                    <div
+                        onClick={projectScrollHandler}
+                        className="hover:text-rose-500 cursor-pointer text-gray-200 font-medium"
+                    >
+                        Projects
+                    </div>
                 </div>
-                <div className={tw('text-white text-[80px]', coding.className)}>
-                    <span className="text-indigo-500">M</span>
-                    <span>insu</span>
-                    <span className="text-indigo-500"> K</span>
-                    <span>im</span>
-                </div>
-                <div className="w-10 h-1 bg-rose-500 my-6"></div>
-                <div className={tw('flex flex-col gap-1 h-6 text-center text-xl text-slate-100', coding.className)}>
-                    <TypeAnimation
-                        wrapper="span"
-                        cursor={true}
-                        repeat={Infinity}
-                        style={{ fontSize: '1.5rem' }}
-                        sequence={[
-                            '안녕하세요. ',
-                            1000,
-                            '빠르게 배우고 성장하며 기술을 공유하는, ',
-                            1250,
-                            '개발자 김민수입니다. ',
-                            2500,
-                        ]}
-                    />
-                </div>
-                <motion.button
-                    onClick={aboutHandler}
-                    whileTap={{ translateY: 10 }}
-                    whileHover={{ scale: 1.05 }}
-                    className=" mt-10 bg-rose-500 relative z-10  p-3 text-xl rounded-md flex justify-center items-center gap-2"
+                <div
+                    onClick={toggleMenu}
+                    className="text-white flex justify-center items-center cursor-pointer lg:hidden p-2 rounded-full hover:bg-slate-700 transition"
                 >
-                    Read More
-                    <FaLongArrowAltDown />
-                </motion.button>
-                <div className="hidden 2xl:flex absolute text-[200px] -rotate-[14deg] -right-10 -bottom-14 text-white opacity-50 gap-2">
-                    <span className={coding.className}>FrontEnd</span>
-                    <span className="animate-flick">|</span>
+                    {isMenuOpen ? <IoMdClose className="text-2xl" /> : <RxHamburgerMenu className="text-2xl" />}
                 </div>
             </div>
-            <div className="about-container"></div>
+
+            <motion.div
+                className="fixed top-16 left-0 bg-slate-900 bg-opacity-75 w-full h-fit lg:hidden z-50"
+                initial="closed"
+                animate={isMenuOpen ? 'open' : 'closed'}
+                variants={list}
+                transition={{ duration: 0.3 }}
+            >
+                <div className="flex flex-col items-center p-4 select-none gap-4">
+                    <div
+                        onClick={aboutScrollHandler}
+                        className="hover:text-white cursor-pointer text-gray-200 font-medium text-2xl border-b-2 border-transparent hover:border-b-slate-100 transition"
+                    >
+                        About me
+                    </div>
+                    <div
+                        onClick={skillScrollHandler}
+                        className="hover:text-white cursor-pointer text-gray-200 font-medium text-2xl border-b-2 border-transparent hover:border-b-slate-100 transition"
+                    >
+                        Skills
+                    </div>
+                    <div
+                        onClick={archiveScrollHandler}
+                        className="hover:text-white cursor-pointer text-gray-200 font-medium text-2xl border-b-2 border-transparent hover:border-b-slate-100 transition"
+                    >
+                        Archives
+                    </div>
+                    <div
+                        onClick={projectScrollHandler}
+                        className="hover:text-white cursor-pointer text-gray-200 font-medium text-2xl border-b-2 border-transparent hover:border-b-slate-100 transition"
+                    >
+                        Projects
+                    </div>
+                </div>
+            </motion.div>
         </>
     );
 };
