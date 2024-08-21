@@ -36,7 +36,7 @@ export const metadata = {
     openGraph: {
         url: 'https://portfolio.yoyobar.xyz/',
         siteName: `KMS's Portfolio`,
-        images: ['/img/template_og_main.webp'],
+        images: ['/img/openGraph.jpg'],
         description: '개발자 김민수의 포트폴리오 페이지 입니다.',
         type: 'article',
         authors: ['Minsu Kim', 'yoyobar'],
@@ -46,6 +46,6 @@ export const metadata = {
         title: `KMS's Portfolio`,
         description: '개발자 김민수의 포트폴리오 페이지 입니다.',
         creator: 'yoyobar',
-        images: ['/img/template_og_main.webp'],
+        images: ['/img/openGraph.jpg'],
     },
 };
