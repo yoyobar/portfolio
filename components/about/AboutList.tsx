@@ -6,7 +6,7 @@ import { TbMailFilled } from 'react-icons/tb';
 import { FaPen } from 'react-icons/fa';
 const AboutList = () => {
     return (
-        <div className="mt-20 grid gap-y-12 w-2/3 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-20 grid gap-y-12 w-full grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
             <li className="w-full flex justify-center items-center gap-4">
                 <div className="w-8 h-8 flex justify-center items-center">
                     <FaUser className="w-full h-full" />
