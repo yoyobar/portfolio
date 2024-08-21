@@ -101,7 +101,9 @@ const Archive = () => {
                     </div>
                 </div>
                 <div className="hidden select-none 2xl:flex absolute text-[200px] -rotate-[14deg] -right-10 -bottom-14 text-white opacity-50 gap-2">
-                    <span className={coding.className}>ARCHIVES</span>
+                    <span className={coding.className}>
+                        AR<span className="text-amber-500">C</span>HIVES
+                    </span>
                     <span className="animate-flick">|</span>
                 </div>
             </div>

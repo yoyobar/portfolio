@@ -21,9 +21,9 @@ const Intro = () => {
                     <span className="text-rose-500">FE</span> {` Developer`}
                 </div>
                 <div className={tw('text-white text-[60px] md:text-[80px]', coding.className)}>
-                    <span className="text-indigo-500">M</span>
+                    <span className="text-lime-500">M</span>
                     <span>insu</span>
-                    <span className="text-indigo-500"> K</span>
+                    <span className="text-lime-500"> K</span>
                     <span>im</span>
                 </div>
                 <div className="w-10 h-1 bg-rose-500 my-6"></div>
@@ -53,7 +53,9 @@ const Intro = () => {
                     <FaLongArrowAltDown />
                 </motion.button>
                 <div className="hidden select-none 2xl:flex absolute text-[200px] -rotate-[14deg] -right-10 -bottom-14 text-white opacity-50 gap-2">
-                    <span className={coding.className}>FrontEnd</span>
+                    <span className={coding.className}>
+                        Front<span className="text-rose-500">E</span>nd
+                    </span>
                     <span className="animate-flick">|</span>
                 </div>
             </div>

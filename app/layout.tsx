@@ -26,7 +26,7 @@ export default function RootLayout({
     return (
         <html lang="ko" className={`${pretendard.className}`}>
             <body>
-                <div className="main_root overflow-x-hidden">{children}</div>
+                <div className="main_root overflow-hidden">{children}</div>
                 <div className="portal_root"></div>
             </body>
         </html>

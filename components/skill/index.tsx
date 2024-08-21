@@ -31,7 +31,9 @@ const Skill = () => {
                     <SkillList title="Deployment" data={constData.skillDataDP} />
                 </div>
                 <div className="select-none hidden 2xl:flex absolute text-[200px] -rotate-[-14deg] -left-10 -bottom-14 text-white opacity-50 gap-2">
-                    <span className={coding.className}>SKILLS</span>
+                    <span className={coding.className}>
+                        S<span className="text-teal-500">K</span>ILLS
+                    </span>
                     <span className="animate-flick">|</span>
                 </div>
             </div>
