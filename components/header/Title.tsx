@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { IoMdClose } from 'react-icons/io'; // Close icon
+import { twMerge as tw } from 'tailwind-merge';
+import { coding } from '@/util/fonts';
 
 const list = {
     open: { opacity: 1, x: 0 },
@@ -34,32 +36,48 @@ const Title = () => {
         setMenuOpen(false);
     };
 
+    const archiveScrollHandler = () => {
+        document.querySelector('.archive-container')?.scrollIntoView({
+            behavior: 'smooth',
+        });
+    };
+
     const toggleMenu = () => {
         setMenuOpen(!isMenuOpen);
     };
 
     return (
         <>
-            <div className="px-10 lg:px-[130px] fixed z-50 w-full h-16 flex items-center justify-between bg-slate-900">
+            <div
+                className={tw(
+                    'px-10 lg:px-[130px] fixed z-50 w-full h-16 flex items-center justify-between bg-slate-900 bg-opacity-75',
+                    coding.className
+                )}
+            >
                 <div
                     onClick={scrollTopHandler}
                     className="hover:text-white cursor-pointer text-2xl font-semibold text-gray-200"
-                >{`KMS's PortFolio`}</div>
+                >{`PortFolio`}</div>
                 <div className="hidden lg:flex gap-10">
                     <div
                         onClick={aboutScrollHandler}
-                        className="hover:text-white cursor-pointer text-gray-200 font-medium"
+                        className="hover:text-rose-500 cursor-pointer text-gray-200 font-medium"
                     >
                         About me
                     </div>
                     <div
                         onClick={skillScrollHandler}
-                        className="hover:text-white cursor-pointer text-gray-200 font-medium"
+                        className="hover:text-rose-500 cursor-pointer text-gray-200 font-medium"
                     >
                         Skills
                     </div>
-                    <div className="hover:text-white cursor-pointer text-gray-200 font-medium">Archiving</div>
-                    <div className="hover:text-white cursor-pointer text-gray-200 font-medium">Projects</div>
+                    <div
+                        onClick={archiveScrollHandler}
+                        className="hover:text-rose-500 cursor-pointer text-gray-200 font-medium"
+                    >
+                        Archives
+                    </div>
+                    <div className="hover:text-rose-500 cursor-pointer text-gray-200 font-medium">Projects</div>
                 </div>
                 <div
                     onClick={toggleMenu}
@@ -89,8 +107,11 @@ const Title = () => {
                     >
                         Skills
                     </div>
-                    <div className="hover:text-white cursor-pointer text-gray-200 font-medium text-2xl border-b-2 border-transparent hover:border-b-slate-100 transition">
-                        Archiving
+                    <div
+                        onClick={archiveScrollHandler}
+                        className="hover:text-white cursor-pointer text-gray-200 font-medium text-2xl border-b-2 border-transparent hover:border-b-slate-100 transition"
+                    >
+                        Archives
                     </div>
                     <div className="hover:text-white cursor-pointer text-gray-200 font-medium text-2xl border-b-2 border-transparent hover:border-b-slate-100 transition">
                         Projects

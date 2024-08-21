@@ -5,7 +5,7 @@ import Skill from '@/components/skill';
 
 export default function Home() {
     return (
-        <div className="h-[200vh]">
+        <div className="h-[200vh] font-pretendard">
             <Header />
             <About />
             <Skill />

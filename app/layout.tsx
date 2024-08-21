@@ -1,13 +1,7 @@
 import type { Metadata } from 'next';
 import { metadata as meta } from './config/metadata';
-import localFont from 'next/font/local';
 import './globals.css';
-
-const pretendard = localFont({
-    src: '../public/fonts/PretendardVariable.woff2',
-    display: 'swap',
-    variable: '--font-pretendard',
-});
+import { pretendard } from '@/util/fonts';
 
 export const metadata: Metadata = {
     metadataBase: new URL(meta.url),
@@ -30,8 +24,11 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="ko" className={pretendard.className}>
-            <body>{children}</body>
+        <html lang="ko" className={`${pretendard.className}`}>
+            <body>
+                <div className="main_root">{children}</div>
+                <div className="portal_root"></div>
+            </body>
         </html>
     );
 }

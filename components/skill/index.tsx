@@ -1,23 +1,19 @@
 'use client';
 import { IoIosLink } from 'react-icons/io';
 import * as constData from '@/app/config/const';
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
 import SkillList from './SkillList';
+import { coding } from '@/util/fonts';
 
 const Skill = () => {
-    const feRef = useRef(null);
     const scrollHandler = () => {
         document.querySelector('.skill-container')?.scrollIntoView({
             behavior: 'smooth',
         });
     };
 
-    const inViewFE = useInView(feRef, { once: true });
-
     return (
         <>
-            <div className="w-full py-32 flex justify-center items-center bg-slate-900 h-fit">
+            <div className="relative w-full py-32 flex justify-center items-center bg-slate-900 h-fit">
                 <div className="px-10 max-w-[1200px] w-full flex flex-col items-center justify-center">
                     <div className="flex mb-10 gap-2 relative justify-center items-center">
                         <div onClick={scrollHandler} className="cursor-pointer w-[25px] h-[25px]">
@@ -35,7 +31,12 @@ const Skill = () => {
 
                     <SkillList title="Deployment" data={constData.skillDataDP} />
                 </div>
+                <div className="hidden 2xl:flex absolute text-[200px] -rotate-[-14deg] -left-10 -bottom-14 text-white opacity-50 gap-2">
+                    <span className={coding.className}>SKILLS</span>
+                    <span className="animate-flick">|</span>
+                </div>
             </div>
+            <div className="archive-container"></div>
         </>
     );
 };

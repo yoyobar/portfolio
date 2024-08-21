@@ -4,6 +4,8 @@ import Title from './Title';
 import { motion } from 'framer-motion';
 import { FaLongArrowAltDown } from 'react-icons/fa';
 import { TypeAnimation } from 'react-type-animation';
+import { coding } from '@/util/fonts';
+import { twMerge as tw } from 'tailwind-merge';
 const Header = () => {
     const aboutHandler = () => {
         document.querySelector('.about-container')?.scrollIntoView({
@@ -14,13 +16,18 @@ const Header = () => {
     return (
         <>
             <Title />
-            <div className="pt-[64px] h-[520px] w-full bg-slate-900 flex flex-col justify-center items-center text-slate-100">
+            <div className="pt-[64px] h-[520px] w-full bg-slate-900 flex flex-col justify-center items-center text-slate-100 relative">
                 <div className="text-white text-[60px] font-extrabold">
                     <span className="text-rose-500">FE</span> {` Developer`}
                 </div>
-                <div className="text-white text-[60px] font-medium">Minsu Kim</div>
+                <div className={tw('text-white text-[80px]', coding.className)}>
+                    <span className="text-indigo-500">M</span>
+                    <span>insu</span>
+                    <span className="text-indigo-500"> K</span>
+                    <span>im</span>
+                </div>
                 <div className="w-10 h-1 bg-rose-500 my-6"></div>
-                <div className="flex flex-col gap-1 h-6 text-center text-xl text-slate-100">
+                <div className={tw('flex flex-col gap-1 h-6 text-center text-xl text-slate-100', coding.className)}>
                     <TypeAnimation
                         wrapper="span"
                         cursor={true}
@@ -40,13 +47,17 @@ const Header = () => {
                     onClick={aboutHandler}
                     whileTap={{ translateY: 10 }}
                     whileHover={{ scale: 1.05 }}
-                    className=" mt-10 bg-rose-500  p-3 text-xl rounded-md flex justify-center items-center gap-2"
+                    className=" mt-10 bg-rose-500 relative z-10  p-3 text-xl rounded-md flex justify-center items-center gap-2"
                 >
                     Read More
                     <FaLongArrowAltDown />
                 </motion.button>
-                <div className="about-container"></div>
+                <div className="hidden 2xl:flex absolute text-[200px] -rotate-[14deg] -right-10 -bottom-14 text-white opacity-50 gap-2">
+                    <span className={coding.className}>FrontEnd</span>
+                    <span className="animate-flick">|</span>
+                </div>
             </div>
+            <div className="about-container"></div>
         </>
     );
 };

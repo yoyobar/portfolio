@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { coding } from '@/util/fonts';
 
 interface SkillItem {
     icon: JSX.Element;
@@ -19,8 +20,8 @@ const SkillList = ({ title, data }: SkillListProps) => {
 
     return (
         <div className="w-full">
-            <div className="flex gap-2 border-b-2 border-b-rose-500 rounded-sm py-2 justify-center items-center mb-20 mt-20 text-3xl font-bold text-gray-100">
-                <div className="text-center">{title}</div>
+            <div className="flex gap-2 border-b-2 border-b-rose-500 rounded-sm py-2 justify-center items-center mb-20 mt-20 text-3xl text-gray-100">
+                <div className={coding.className}>{title}</div>
             </div>
 
             <div

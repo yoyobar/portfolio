@@ -1,5 +1,4 @@
 'use client';
-import { useRef } from 'react';
 import { IoIosLink } from 'react-icons/io';
 import AboutList from './AboutList';
 
