@@ -5,3 +5,19 @@
 body {
     overflow-x: hidden;
 }
+
+/* Webkit (Chrome, Safari) */
+*::-webkit-scrollbar {
+    width: 9px;
+    height: 7px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #111729;
+    background-clip: content-box;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #dc5460;
+    border-radius: 0px;
+}
