@@ -22,7 +22,7 @@ const Project = () => {
     return (
         <>
             <div className="relative w-full py-32 flex flex-col justify-center items-center bg-sky-700 h-fit">
-                <div className="px-10 mb-20 max-w-[1200px] w-full flex flex-col gap-10 items-center justify-center">
+                <div className="px-2 md:px-10 mb-20 max-w-[1200px] w-full flex flex-col gap-10 items-center justify-center">
                     <div className="flex mb-20 gap-2 relative justify-center items-center">
                         <div onClick={scrollHandler} className="cursor-pointer w-[25px] h-[25px]">
                             <IoIosLink className="w-full h-full text-gray-200 hover:text-white" />
@@ -41,7 +41,7 @@ const Project = () => {
                                 <Image alt="blog_project" fill className="px-4 object-cover" src="/img/project_1.png" />
                             </div>
 
-                            <div className="w-full text-lg ml-8 pr-20">
+                            <div className="w-full text-sm md:text-lg ml-8 pr-20">
                                 <section>
                                     <span className="text-rose-600">Next.js </span>
                                     <span>
@@ -152,7 +152,7 @@ const Project = () => {
                                 <Image alt="blog_project" fill className="px-4 object-cover" src="/img/project_2.png" />
                             </div>
 
-                            <div className="w-full text-lg ml-8 pr-20">
+                            <div className="w-full text-sm md:text-lg ml-8 pr-20">
                                 <section>
                                     <span>
                                         <span className="text-rose-600">OZ 코딩스쿨</span>에서 주최한 FE-BE

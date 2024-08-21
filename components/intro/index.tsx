@@ -17,10 +17,10 @@ const Intro = () => {
         <>
             <Title />
             <div className="pt-[64px] h-[520px] w-full bg-slate-900 flex flex-col justify-center items-center text-slate-100 relative">
-                <div className="text-white text-[60px] font-extrabold">
+                <div className="text-white text-[40px] md:text-[60px] font-extrabold">
                     <span className="text-rose-500">FE</span> {` Developer`}
                 </div>
-                <div className={tw('text-white text-[80px]', coding.className)}>
+                <div className={tw('text-white text-[60px] md:text-[80px]', coding.className)}>
                     <span className="text-indigo-500">M</span>
                     <span>insu</span>
                     <span className="text-indigo-500"> K</span>
@@ -32,7 +32,7 @@ const Intro = () => {
                         wrapper="span"
                         cursor={true}
                         repeat={Infinity}
-                        style={{ fontSize: '1.5rem' }}
+                        className="text-base md:text-xl"
                         sequence={[
                             '안녕하세요. ',
                             1000,
