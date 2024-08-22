@@ -9,8 +9,8 @@ import Skill from '@/components/skill';
 export default function Home() {
     return (
         <>
-            <div className="scroll-end"></div>
             <div className="font-pretendard">
+                <div className="scroll-end"></div>
                 <ScrollController />
                 <Header />
                 <Intro />
