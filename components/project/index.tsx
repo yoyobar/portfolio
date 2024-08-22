@@ -33,7 +33,6 @@ const Project = () => {
                     <AdminProject />
                     <WeatherProject />
                 </div>
-
                 <footer className="hidden select-none 2xl:flex absolute text-[200px] -rotate-[-14deg] -left-10 -bottom-14 text-white opacity-50 gap-2">
                     <span className={coding.className}>
                         Pro<span className="text-lime-500">j</span>ects

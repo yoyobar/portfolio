@@ -1,5 +1,6 @@
 import About from '@/components/about';
 import Archive from '@/components/archive';
+import Footer from '@/components/footer';
 import Header from '@/components/header';
 import Intro from '@/components/intro';
 import Project from '@/components/project';
@@ -11,14 +12,15 @@ export default function Home() {
         <>
             <div className="font-pretendard">
                 <div className="scroll-end"></div>
-                <ScrollController />
                 <Header />
                 <Intro />
                 <About />
                 <Skill />
                 <Archive />
                 <Project />
+                <Footer />
             </div>
+            <ScrollController />
         </>
     );
 }

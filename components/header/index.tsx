@@ -1,10 +1,10 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { IoMdClose } from 'react-icons/io'; // Close icon
 import { twMerge as tw } from 'tailwind-merge';
-import { coding } from '@/util/fonts';
+import { aggro, coding } from '@/util/fonts';
 
 const list = {
     open: { opacity: 1, x: 0 },
@@ -58,14 +58,17 @@ const Header = () => {
         <>
             <div
                 className={tw(
-                    'select-none px-10 lg:px-[130px] fixed z-50 w-full h-16 flex items-center justify-between bg-slate-900 bg-opacity-75',
+                    'select-none px-10 fixed lg:px-[130px] z-50 w-full h-16 flex items-center justify-between bg-stone-800 bg-opacity-75',
                     coding.className
                 )}
             >
                 <div
                     onClick={scrollTopHandler}
-                    className="hover:text-white tracking-wider cursor-pointer text-2xl font-semibold text-gray-200"
-                >{`PortFolio`}</div>
+                    className={tw(
+                        'hover:text-lime-400 tracking-wider cursor-pointer text-2xl text-gray-200',
+                        aggro.className
+                    )}
+                >{`KMS's Portfolio`}</div>
                 <div className="hidden lg:flex gap-10">
                     <div
                         onClick={aboutScrollHandler}

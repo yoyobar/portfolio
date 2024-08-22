@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import Title from '../header';
 import { motion } from 'framer-motion';
 import { FaLongArrowAltDown } from 'react-icons/fa';
 import { TypeAnimation } from 'react-type-animation';
@@ -15,8 +14,7 @@ const Intro = () => {
 
     return (
         <>
-            <Title />
-            <div className="pt-[64px] h-[520px] w-full bg-slate-900 flex flex-col justify-center items-center text-slate-100 relative">
+            <div className="h-[520px] w-full bg-stone-800 flex flex-col justify-center items-center text-slate-100 relative">
                 <div className="text-white text-[40px] md:text-[60px] font-extrabold">
                     <span className="text-rose-500">FE</span> {` Developer`}
                 </div>

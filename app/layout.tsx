@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { metadata as meta } from './config/metadata';
 import './globals.css';
 import { pretendard } from '@/util/fonts';
+import Header from '@/components/header';
 
 export const metadata: Metadata = {
     metadataBase: new URL(meta.url),
@@ -26,7 +27,7 @@ export default function RootLayout({
     return (
         <html lang="ko" className={`${pretendard.className}`}>
             <body>
-                <div className="main_root overflow-hidden">{children}</div>
+                <div className="main_root w-full h-full overflow-x-hidden">{children}</div>
                 <div className="portal_root"></div>
             </body>
         </html>

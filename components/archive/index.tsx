@@ -27,7 +27,7 @@ const Archive = () => {
 
     return (
         <>
-            <div className="relative w-full py-32 flex justify-center items-center bg-stone-900 h-fit">
+            <div className="relative w-full py-32 flex justify-center items-center bg-stone-800 h-fit">
                 <div className="max-w-[1200px] w-full flex flex-col items-center justify-center mb-20">
                     <div className="flex mb-20 gap-2 relative justify-center items-center">
                         <div onClick={scrollHandler} className="cursor-pointer w-[25px] h-[25px]">
