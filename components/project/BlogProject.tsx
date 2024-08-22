@@ -8,7 +8,7 @@ import { twMerge as tw } from 'tailwind-merge';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../ui/carousel';
 import { type CarouselApi } from '@/components/ui/carousel';
 
-const Project3 = () => {
+const BlogProject = () => {
     const [api, setApi] = useState<CarouselApi>();
     const [current, setCurrent] = useState(0);
     const [count, setCount] = useState(0);
@@ -148,4 +148,4 @@ const Project3 = () => {
     );
 };
 
-export default Project3;
+export default BlogProject;

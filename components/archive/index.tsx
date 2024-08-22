@@ -43,7 +43,7 @@ const Archive = () => {
                             onClick={githubHandler}
                             whileHover={{ translateY: -5 }}
                             animate={{ opacity: inViewSection ? 1 : 0 }}
-                            className="bg-white relative z-10 cursor-pointer select-none w-full h-[315px] rounded-md p-4 flex flex-col gap-4 justify-center"
+                            className="bg-white relative z-10 cursor-pointer select-none w-full h-[315px] rounded-md px-8 flex flex-col gap-4 justify-center"
                         >
                             <div className="flex gap-4 text-2xl items-center">
                                 <FaGithub className="w-12 h-12" />
@@ -75,7 +75,7 @@ const Archive = () => {
                             onClick={blogHandler}
                             animate={{ opacity: inViewSection ? 1 : 0 }}
                             whileHover={{ translateY: -5 }}
-                            className="relative z-10 bg-white cursor-pointer select-none w-full h-[315px] rounded-md p-4 px-8 flex flex-col gap-4 justify-center"
+                            className="relative z-10 bg-white cursor-pointer select-none w-full h-[315px] rounded-md px-8 flex flex-col gap-4 justify-center"
                         >
                             <div className="flex gap-4 text-2xl items-center">
                                 <SiNextdotjs className="w-12 h-12" />
@@ -91,7 +91,7 @@ const Archive = () => {
                             </li>
                             <li className="text-xs sm:text-base flex items-center gap-4">
                                 <div className="w-1 h-1 rounded-full bg-rose-500"></div>
-                                <div>학습하면서 햇갈리는 부분 기록</div>
+                                <div>학습하면서 헷갈리는 부분 기록</div>
                             </li>
                             <li className="text-xs sm:text-base flex items-center gap-4">
                                 <div className="w-1 h-1 rounded-full bg-rose-500"></div>
