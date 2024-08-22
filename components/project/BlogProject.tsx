@@ -2,27 +2,58 @@
 import { aggro } from '@/util/fonts';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import { useEffect, useState } from 'react';
 import { FaCheck } from 'react-icons/fa';
 import { twMerge as tw } from 'tailwind-merge';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../ui/carousel';
+import { type CarouselApi } from '@/components/ui/carousel';
 
 const Project3 = () => {
+    const [api, setApi] = useState<CarouselApi>();
+    const [current, setCurrent] = useState(0);
+    const [count, setCount] = useState(0);
+
     const detailHandler = () => {
         window.open('https://wiki.yoyobar.xyz/posts/Project/blog_page');
     };
+
+    useEffect(() => {
+        if (!api) {
+            return;
+        }
+
+        setCount(api.scrollSnapList().length);
+        setCurrent(api.selectedScrollSnap() + 1);
+
+        api.on('select', () => {
+            setCurrent(api.selectedScrollSnap() + 1);
+        });
+    }, [api]);
+
     return (
-        <div className="w-full flex flex-col h-fit bg-white rounded-lg shadow-lg shadow-sky-950 border pb-14">
+        <div className="px-4 lg:px-0 w-full flex flex-col h-fit bg-white rounded-lg shadow-lg shadow-sky-950 border pb-14">
             <article>
                 <div className={tw('w-full text-center text-4xl pt-14', aggro.className)}>블로그 웹 사이트</div>
-                <div className="w-full text-center text-gray-500 pb-12">2024.05 - 2024.06 (1인 프로젝트)</div>
+                <div className="w-full text-center text-gray-500 pb-12">2024.05 - 2024.06 (개인 프로젝트)</div>
             </article>
-            <article className="flex flex-col lg:flex-row gap-4">
-                <div className="w-full h-[400px] relative cursor-pointer aspect-w-1 aspect-h-1 ">
-                    <Image alt="blog_project" fill className="object-cover md:px-8 px-4" src="/img/project_3.png" />
-                </div>
-
-                <div className="w-full text-sm md:text-lg pr-20">
-                    <section>
+            <article className="relative flex flex-col lg:flex-row px-2 lg:px-8 gap-4">
+                <Carousel setApi={setApi} className="cursor-grab max-w-full lg:max-w-[380px] xl:max-w-[500px]">
+                    <CarouselContent>
+                        <CarouselItem className="">
+                            <div className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative">
+                                <Image alt="admin_project" fill sizes="100vw" className="" src="/img/placeholder.png" />
+                            </div>
+                        </CarouselItem>
+                        <CarouselItem className="">
+                            <div className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative">
+                                <Image alt="admin_project" fill sizes="100vw" className="" src="/img/placeholder.png" />
+                            </div>
+                        </CarouselItem>
+                    </CarouselContent>
+                    <div className="text-center mt-2 text-gray-400 cursor-default select-none">{`${current} / ${count}`}</div>
+                </Carousel>
+                <div className="w-full text-sm md:text-lg">
+                    <section className="mt-4 md:mt-0">
                         <span className="text-rose-600">Next.js </span>
                         <span>최신버전에 익숙해지고자 직접 블로그를 개발해보기위해 시작된 프로젝트 입니다.</span>
                         <p className="mt-1" />

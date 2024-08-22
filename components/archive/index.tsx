@@ -37,7 +37,7 @@ const Archive = () => {
                     </div>
 
                     <div ref={sectionRef} className="flex flex-col lg:flex-row gap-10 w-full px-2 md:px-10">
-                        <motion.div
+                        <motion.menu
                             onMouseEnter={() => setGithubHover(true)}
                             onMouseLeave={() => setGithubHover(false)}
                             onClick={githubHandler}
@@ -56,20 +56,20 @@ const Archive = () => {
                                 <span className="font-bold">소스코드 저장소</span> <span>입니다.</span>
                             </div>
 
-                            <ul className="flex items-center gap-4 text-xs sm:text-base">
+                            <li className="flex items-center gap-4 text-xs sm:text-base">
                                 <div className="w-1 h-1 rounded-full bg-rose-500"></div>
                                 <div>OZ 코딩스쿨 수강 기간 동안 작성한 프로젝트</div>
-                            </ul>
-                            <ul className="flex items-center gap-4 text-xs sm:text-base">
+                            </li>
+                            <li className="flex items-center gap-4 text-xs sm:text-base">
                                 <div className="w-1 h-1 rounded-full bg-rose-500"></div>
                                 <div>개인적으로 공부하고 진행한 프로젝트</div>
-                            </ul>
-                            <ul className="flex items-center gap-4 text-xs sm:text-base">
+                            </li>
+                            <li className="flex items-center gap-4 text-xs sm:text-base">
                                 <div className="w-1 h-1 rounded-full bg-rose-500"></div>
                                 <div>공부하고 기록한 학습기록</div>
-                            </ul>
-                        </motion.div>
-                        <motion.div
+                            </li>
+                        </motion.menu>
+                        <motion.menu
                             onMouseEnter={() => setBlogHover(true)}
                             onMouseLeave={() => setBlogHover(false)}
                             onClick={blogHandler}
@@ -85,19 +85,19 @@ const Archive = () => {
                             <div className="text-lg">
                                 <span className="font-bold">직접 제작한 블로그</span> <span>입니다.</span>
                             </div>
-                            <ul className="text-xs sm:text-base flex items-center gap-4">
+                            <li className="text-xs sm:text-base flex items-center gap-4">
                                 <div className="w-1 h-1 rounded-full bg-rose-500"></div>
                                 <div>학습하면서 발생한 문제 기록</div>
-                            </ul>
-                            <ul className="text-xs sm:text-base flex items-center gap-4">
+                            </li>
+                            <li className="text-xs sm:text-base flex items-center gap-4">
                                 <div className="w-1 h-1 rounded-full bg-rose-500"></div>
                                 <div>학습하면서 햇갈리는 부분 기록</div>
-                            </ul>
-                            <ul className="text-xs sm:text-base flex items-center gap-4">
+                            </li>
+                            <li className="text-xs sm:text-base flex items-center gap-4">
                                 <div className="w-1 h-1 rounded-full bg-rose-500"></div>
                                 <div>프로젝트 회고록</div>
-                            </ul>
-                        </motion.div>
+                            </li>
+                        </motion.menu>
                     </div>
                 </div>
                 <div className="hidden select-none 2xl:flex absolute text-[200px] -rotate-[14deg] -right-10 -bottom-14 text-white opacity-50 gap-2">

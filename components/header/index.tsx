@@ -64,7 +64,7 @@ const Header = () => {
             >
                 <div
                     onClick={scrollTopHandler}
-                    className="hover:text-white cursor-pointer text-2xl font-semibold text-gray-200"
+                    className="hover:text-white tracking-wider cursor-pointer text-2xl font-semibold text-gray-200"
                 >{`PortFolio`}</div>
                 <div className="hidden lg:flex gap-10">
                     <div

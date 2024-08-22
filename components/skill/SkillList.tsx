@@ -20,7 +20,7 @@ const SkillList = ({ title, data }: SkillListProps) => {
 
     return (
         <div className="w-full relative z-10">
-            <div className="flex gap-2 border-b-2 border-b-rose-500 rounded-sm py-2 justify-center items-center mb-20 mt-20 text-3xl text-gray-100">
+            <div className="flex gap-2 border-b-2 border-b-rose-500 rounded-sm py-2 justify-center items-center mb-20 mt-20 text-3xl tracking-wider text-gray-100">
                 <div className={coding.className}>{title}</div>
             </div>
 

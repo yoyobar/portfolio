@@ -1,11 +1,12 @@
 'use client';
 import { coding } from '@/util/fonts';
 import { IoIosLink } from 'react-icons/io';
-import Project1 from './Project1';
-import Project2 from './Project2';
-import Project3 from './Project3';
-import Project4 from './Project4';
-import Project5 from './Project5';
+import AdminProject from './AdminProject';
+import HunsuProject from './HunsuProject';
+import EmotreeProject from './EmotreeProject';
+import BlogProject from './BlogProject';
+import WeatherProject from './WeatherProject';
+import PortFolioProject from './PortFolioProject';
 
 const Project = () => {
     const scrollHandler = () => {
@@ -25,11 +26,12 @@ const Project = () => {
                         <div className="text-[50px] font-extrabold border-b border-b-white text-white">Projects</div>
                     </div>
 
-                    <Project1 />
-                    <Project2 />
-                    <Project3 />
-                    <Project4 />
-                    <Project5 />
+                    <PortFolioProject />
+                    <HunsuProject />
+                    <EmotreeProject />
+                    <BlogProject />
+                    <AdminProject />
+                    <WeatherProject />
                 </div>
 
                 <footer className="hidden select-none 2xl:flex absolute text-[200px] -rotate-[-14deg] -left-10 -bottom-14 text-white opacity-50 gap-2">

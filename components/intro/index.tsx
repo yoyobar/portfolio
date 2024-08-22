@@ -20,7 +20,7 @@ const Intro = () => {
                 <div className="text-white text-[40px] md:text-[60px] font-extrabold">
                     <span className="text-rose-500">FE</span> {` Developer`}
                 </div>
-                <div className={tw('text-white text-[60px] md:text-[80px]', coding.className)}>
+                <div className={tw('text-white text-[60px] md:text-[80px] tracking-wider', coding.className)}>
                     <span className="text-lime-500">M</span>
                     <span>insu</span>
                     <span className="text-lime-500"> K</span>

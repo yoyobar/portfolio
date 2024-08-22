@@ -43,8 +43,8 @@ export const skillDataFE = [
     {
         icon: <SiNextdotjs className="w-12 h-12 text-gray-100" />,
         label: 'Next.js',
-        progress: 50,
-        learn: 'Learning',
+        progress: 72,
+        learn: 'Familiar',
     },
     {
         icon: <RiTailwindCssFill className="w-12 h-12 text-sky-400" />,
