@@ -52,7 +52,7 @@ const HunsuProject = () => {
                     </CarouselContent>
                     <div className="text-center mt-2 text-gray-400 cursor-default select-none">{`${current} / ${count}`}</div>
                 </Carousel>
-                <div className="w-full text-sm md:text-lg pr-20">
+                <div className="w-full text-sm md:text-lg">
                     <section className="mt-4 md:mt-0">
                         <span>
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore quos ducimus officiis

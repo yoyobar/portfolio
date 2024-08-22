@@ -97,14 +97,14 @@ const Header = () => {
                 </div>
                 <div
                     onClick={toggleMenu}
-                    className="text-white flex justify-center items-center cursor-pointer lg:hidden p-2 rounded-full hover:bg-slate-700 transition"
+                    className="text-white flex justify-center items-center cursor-pointer lg:hidden p-2 rounded-full hover:bg-stone-800 transition"
                 >
                     {isMenuOpen ? <IoMdClose className="text-2xl" /> : <RxHamburgerMenu className="text-2xl" />}
                 </div>
             </div>
 
             <motion.div
-                className="fixed top-16 left-0 bg-slate-900 bg-opacity-75 w-full h-fit lg:hidden z-50"
+                className="fixed top-16 left-0 bg-stone-800 bg-opacity-75 w-full h-fit lg:hidden z-50"
                 initial="closed"
                 animate={isMenuOpen ? 'open' : 'closed'}
                 variants={list}
