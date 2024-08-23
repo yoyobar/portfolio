@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { FaCheck } from 'react-icons/fa';
 import { twMerge as tw } from 'tailwind-merge';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../ui/carousel';
+import { Carousel, CarouselContent, CarouselItem } from '../ui/carousel';
 import { type CarouselApi } from '@/components/ui/carousel';
 import { useModalStore } from '@/app/config/store';
 
