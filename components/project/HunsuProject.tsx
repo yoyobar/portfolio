@@ -48,7 +48,7 @@ const HunsuProject = () => {
                         <CarouselItem className="">
                             <div
                                 onClick={() => modalHandler('/img/placeholder.png')}
-                                className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative"
+                                className="max-w-screen h-[300px] lg:w-[380px] md:h-[380px] xl:w-[500px] xl:h-[400px] relative"
                             >
                                 <Image alt="hunsu_project" fill sizes="100vw" className="" src="/img/placeholder.png" />
                             </div>
@@ -56,7 +56,7 @@ const HunsuProject = () => {
                         <CarouselItem className="">
                             <div
                                 onClick={() => modalHandler('/img/placeholder.png')}
-                                className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative"
+                                className="max-w-screen h-[300px] lg:w-[380px] md:h-[380px] xl:w-[500px] xl:h-[400px] relative"
                             >
                                 <Image alt="hunsu_project" fill sizes="100vw" className="" src="/img/placeholder.png" />
                             </div>

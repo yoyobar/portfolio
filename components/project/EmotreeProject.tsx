@@ -48,7 +48,7 @@ const EmotreeProject = () => {
                         <CarouselItem className="">
                             <div
                                 onClick={() => modalHandler('/img/emotree_1.gif')}
-                                className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative"
+                                className="max-w-screen h-[300px] lg:w-[380px] md:h-[380px] xl:w-[500px] xl:h-[400px] relative"
                             >
                                 <Image alt="emotree_project" fill sizes="100vw" className="" src="/img/emotree_1.gif" />
                             </div>
@@ -56,7 +56,7 @@ const EmotreeProject = () => {
                         <CarouselItem className="">
                             <div
                                 onClick={() => modalHandler('/img/emotree_2.gif')}
-                                className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative"
+                                className="max-w-screen h-[300px] lg:w-[380px] md:h-[380px] xl:w-[500px] xl:h-[400px] relative"
                             >
                                 <Image alt="emotree_project" fill sizes="100vw" className="" src="/img/emotree_2.gif" />
                             </div>
@@ -64,7 +64,7 @@ const EmotreeProject = () => {
                         <CarouselItem className="">
                             <div
                                 onClick={() => modalHandler('/img/emotree_3.png')}
-                                className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative"
+                                className="max-w-screen h-[300px] lg:w-[380px] md:h-[380px] xl:w-[500px] xl:h-[400px] relative"
                             >
                                 <Image alt="emotree_project" fill sizes="100vw" className="" src="/img/emotree_3.png" />
                             </div>
@@ -72,7 +72,7 @@ const EmotreeProject = () => {
                         <CarouselItem className="">
                             <div
                                 onClick={() => modalHandler('/img/emotree_4.png')}
-                                className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative"
+                                className="max-w-screen h-[300px] lg:w-[380px] md:h-[380px] xl:w-[500px] xl:h-[400px] relative"
                             >
                                 <Image alt="admin_project" fill sizes="100vw" className="" src="/img/emotree_4.png" />
                             </div>

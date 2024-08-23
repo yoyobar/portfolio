@@ -48,7 +48,7 @@ const BlogProject = () => {
                         <CarouselItem className="">
                             <div
                                 onClick={() => modalHandler('/img/blog_1.gif')}
-                                className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative"
+                                className="max-w-screen h-[300px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative"
                             >
                                 <Image alt="blog_project" fill sizes="100vw" className="" src="/img/blog_1.gif" />
                             </div>
@@ -56,7 +56,7 @@ const BlogProject = () => {
                         <CarouselItem className="">
                             <div
                                 onClick={() => modalHandler('/img/blog_2.gif')}
-                                className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative"
+                                className="max-w-screen h-[300px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative"
                             >
                                 <Image alt="blog_project" fill sizes="100vw" className="" src="/img/blog_2.gif" />
                             </div>
@@ -64,7 +64,7 @@ const BlogProject = () => {
                         <CarouselItem className="">
                             <div
                                 onClick={() => modalHandler('/img/blog_3.gif')}
-                                className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative"
+                                className="max-w-screen h-[300px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative"
                             >
                                 <Image alt="blog_project" fill sizes="100vw" className="" src="/img/blog_3.gif" />
                             </div>
