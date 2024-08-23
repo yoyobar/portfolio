@@ -19,7 +19,9 @@ const About = () => {
                         <div onClick={scrollHandler} className="cursor-pointer w-[25px] h-[25px]">
                             <IoIosLink className="w-full h-full text-gray-600 hover:text-black" />
                         </div>
-                        <div className={tw('text-[50px] font-extrabold border-b', aggro.className)}>ABOUT ME</div>
+                        <div className={tw('text-[44px] md:text-[50px] font-extrabold border-b', aggro.className)}>
+                            ABOUT ME
+                        </div>
                     </div>
                     <AboutList />
                 </div>

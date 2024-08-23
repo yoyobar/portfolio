@@ -19,10 +19,6 @@ const HunsuProject = () => {
         setSrc(src);
     };
 
-    const detailHandler = () => {
-        window.open('https://hunsuking.yoyobar.xyz');
-    };
-
     useEffect(() => {
         if (!api) {
             return;

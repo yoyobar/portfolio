@@ -73,7 +73,7 @@ const Header = () => {
                 <div
                     onClick={scrollTopHandler}
                     className={tw(
-                        'hover:text-amber-400 tracking-wider cursor-pointer text-2xl text-gray-200',
+                        'hover:text-amber-400 tracking-wider cursor-pointer text-lg md:text-2xl text-gray-200',
                         aggro.className
                     )}
                 >{`KMS's Portfolio`}</div>
