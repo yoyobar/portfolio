@@ -8,8 +8,12 @@ import BlogProject from './BlogProject';
 import WeatherProject from './WeatherProject';
 import PortFolioProject from './PortFolioProject';
 import { twMerge as tw } from 'tailwind-merge';
+import ModalPortal from '../modal/ModalPortal';
+import ModalPicture from '../modal/ModalPicture';
+import { useModalStore } from '@/app/config/store';
 
 const Project = () => {
+    const { modal, setOpen } = useModalStore();
     const scrollHandler = () => {
         document.querySelector('.project-container')?.scrollIntoView({
             behavior: 'smooth',
@@ -49,6 +53,17 @@ const Project = () => {
                 </footer>
                 <div className="contact-container"></div>
             </div>
+
+            {modal.open && (
+                <ModalPortal>
+                    <ModalPicture
+                        src={modal.src}
+                        isOpen={modal.open}
+                        onClose={() => setOpen(false)}
+                        parent="main_root"
+                    />
+                </ModalPortal>
+            )}
         </>
     );
 };

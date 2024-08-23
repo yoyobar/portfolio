@@ -7,11 +7,17 @@ import { FaCheck } from 'react-icons/fa';
 import { twMerge as tw } from 'tailwind-merge';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../ui/carousel';
 import { type CarouselApi } from '@/components/ui/carousel';
+import { useModalStore } from '@/app/config/store';
 
 const EmotreeProject = () => {
     const [api, setApi] = useState<CarouselApi>();
     const [current, setCurrent] = useState(0);
     const [count, setCount] = useState(0);
+    const { setOpen, setSrc } = useModalStore();
+    const modalHandler = (src: string) => {
+        setOpen(true);
+        setSrc(src);
+    };
 
     const detailHandler = () => {
         window.open('https://emotree.yoyobar.xyz');
@@ -40,13 +46,35 @@ const EmotreeProject = () => {
                 <Carousel setApi={setApi} className="cursor-grab max-w-full lg:max-w-[380px] xl:max-w-[500px]">
                     <CarouselContent>
                         <CarouselItem className="">
-                            <div className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative">
-                                <Image alt="admin_project" fill sizes="100vw" className="" src="/img/placeholder.png" />
+                            <div
+                                onClick={() => modalHandler('/img/emotree_1.gif')}
+                                className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative"
+                            >
+                                <Image alt="emotree_project" fill sizes="100vw" className="" src="/img/emotree_1.gif" />
                             </div>
                         </CarouselItem>
                         <CarouselItem className="">
-                            <div className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative">
-                                <Image alt="admin_project" fill sizes="100vw" className="" src="/img/placeholder.png" />
+                            <div
+                                onClick={() => modalHandler('/img/emotree_2.gif')}
+                                className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative"
+                            >
+                                <Image alt="emotree_project" fill sizes="100vw" className="" src="/img/emotree_2.gif" />
+                            </div>
+                        </CarouselItem>
+                        <CarouselItem className="">
+                            <div
+                                onClick={() => modalHandler('/img/emotree_3.png')}
+                                className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative"
+                            >
+                                <Image alt="emotree_project" fill sizes="100vw" className="" src="/img/emotree_3.png" />
+                            </div>
+                        </CarouselItem>
+                        <CarouselItem className="">
+                            <div
+                                onClick={() => modalHandler('/img/emotree_4.png')}
+                                className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative"
+                            >
+                                <Image alt="admin_project" fill sizes="100vw" className="" src="/img/emotree_4.png" />
                             </div>
                         </CarouselItem>
                     </CarouselContent>
@@ -88,12 +116,6 @@ const EmotreeProject = () => {
                             상태관리와 좀더 친숙해 질 수 있었습니다.
                         </span>
                         <section className="flex flex-col mt-4 gap-4">
-                            <button
-                                onClick={detailHandler}
-                                className="hover:bg-slate-700 transition w-[200px] py-1 px-4 rounded-sm bg-black text-white"
-                            >
-                                자세히 보기
-                            </button>
                             <div className="border-b w-full"></div>
                             <section className="flex flex-col lg:flex-row gap-2 items-start">
                                 <div className="flex gap-2 items-center min-w-[140px]">

@@ -13,7 +13,7 @@ export default function Home() {
         <>
             <div className="font-pretendard">
                 <div className="scroll-end"></div>
-                <Header />
+
                 <Intro />
                 <About />
                 <Skill />

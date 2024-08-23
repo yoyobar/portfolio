@@ -7,11 +7,17 @@ import { FaCheck } from 'react-icons/fa';
 import { twMerge as tw } from 'tailwind-merge';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../ui/carousel';
 import { type CarouselApi } from '@/components/ui/carousel';
+import { useModalStore } from '@/app/config/store';
 
 const BlogProject = () => {
     const [api, setApi] = useState<CarouselApi>();
     const [current, setCurrent] = useState(0);
     const [count, setCount] = useState(0);
+    const { setOpen, setSrc } = useModalStore();
+    const modalHandler = (src: string) => {
+        setOpen(true);
+        setSrc(src);
+    };
 
     const detailHandler = () => {
         window.open('https://wiki.yoyobar.xyz/posts/Project/blog_page');
@@ -40,13 +46,27 @@ const BlogProject = () => {
                 <Carousel setApi={setApi} className="cursor-grab max-w-full lg:max-w-[380px] xl:max-w-[500px]">
                     <CarouselContent>
                         <CarouselItem className="">
-                            <div className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative">
-                                <Image alt="admin_project" fill sizes="100vw" className="" src="/img/placeholder.png" />
+                            <div
+                                onClick={() => modalHandler('/img/blog_1.gif')}
+                                className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative"
+                            >
+                                <Image alt="blog_project" fill sizes="100vw" className="" src="/img/blog_1.gif" />
                             </div>
                         </CarouselItem>
                         <CarouselItem className="">
-                            <div className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative">
-                                <Image alt="admin_project" fill sizes="100vw" className="" src="/img/placeholder.png" />
+                            <div
+                                onClick={() => modalHandler('/img/blog_2.gif')}
+                                className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative"
+                            >
+                                <Image alt="blog_project" fill sizes="100vw" className="" src="/img/blog_2.gif" />
+                            </div>
+                        </CarouselItem>
+                        <CarouselItem className="">
+                            <div
+                                onClick={() => modalHandler('/img/blog_3.gif')}
+                                className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative"
+                            >
+                                <Image alt="blog_project" fill sizes="100vw" className="" src="/img/blog_3.gif" />
                             </div>
                         </CarouselItem>
                     </CarouselContent>

@@ -66,7 +66,7 @@ const Header = () => {
         <>
             <div
                 className={tw(
-                    'select-none px-10 fixed lg:px-[130px] z-50 w-full h-16 flex items-center justify-between bg-stone-800 bg-opacity-75',
+                    'header select-none px-10 fixed lg:px-[130px] z-50 w-full h-16 flex items-center justify-between bg-stone-800 bg-opacity-75',
                     coding.className
                 )}
             >

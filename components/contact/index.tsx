@@ -128,7 +128,7 @@ const Contact = () => {
                                     <FormItem>
                                         <FormLabel>이메일</FormLabel>
                                         <FormControl>
-                                            <Input type="email" placeholder="example@gmail.com" {...field} />
+                                            <Input type="email" placeholder="example@example.com" {...field} />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>

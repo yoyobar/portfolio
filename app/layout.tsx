@@ -29,8 +29,9 @@ export default function RootLayout({
         <html lang="ko" className={`${pretendard.className}`}>
             <body>
                 <Toaster />
+                <Header />
                 <div className="main_root w-full h-full overflow-x-hidden">{children}</div>
-                <div className="portal_root"></div>
+                <div id="portal_root"></div>
             </body>
         </html>
     );

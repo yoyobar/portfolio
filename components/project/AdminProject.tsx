@@ -7,11 +7,17 @@ import { FaCheck } from 'react-icons/fa';
 import { twMerge as tw } from 'tailwind-merge';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../ui/carousel';
 import { type CarouselApi } from '@/components/ui/carousel';
+import { useModalStore } from '@/app/config/store';
 
 const AdminProject = () => {
     const [api, setApi] = useState<CarouselApi>();
     const [current, setCurrent] = useState(0);
     const [count, setCount] = useState(0);
+    const { setOpen, setSrc } = useModalStore();
+    const modalHandler = (src: string) => {
+        setOpen(true);
+        setSrc(src);
+    };
 
     const detailHandler = () => {
         window.open('https://wiki.yoyobar.xyz/posts/Project/admin_page');
@@ -40,13 +46,11 @@ const AdminProject = () => {
                 <Carousel setApi={setApi} className="cursor-grab max-w-full lg:max-w-[380px] xl:max-w-[500px]">
                     <CarouselContent>
                         <CarouselItem className="">
-                            <div className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative">
-                                <Image alt="admin_project" fill sizes="100vw" className="" src="/img/placeholder.png" />
-                            </div>
-                        </CarouselItem>
-                        <CarouselItem className="">
-                            <div className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative">
-                                <Image alt="admin_project" fill sizes="100vw" className="" src="/img/placeholder.png" />
+                            <div
+                                onClick={() => modalHandler('/img/admin_1.png')}
+                                className="max-w-screen h-[380px] lg:w-[380px] lg:[380px] xl:w-[500px] xl:h-[400px] relative"
+                            >
+                                <Image alt="admin_project" fill sizes="100vw" className="" src="/img/admin_1.png" />
                             </div>
                         </CarouselItem>
                     </CarouselContent>
@@ -54,11 +58,27 @@ const AdminProject = () => {
                 </Carousel>
                 <div className="w-full text-sm md:text-lg">
                     <section className="mt-4 md:mt-0">
-                        <span>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore quos ducimus officiis
-                            eligendi odio vel aspernatur possimus itaque aliquid, blanditiis commodi veritatis dolor
-                            impedit. Aliquam possimus reprehenderit ex ut velit?
-                        </span>
+                        <p>백엔드와의 연동을 연습하기위해 개인적으로 진행한 프로젝트 입니다.</p>
+                        <p className="mt-1">
+                            <span className="text-rose-500">MySQL</span>, <span className="text-rose-500">Docker</span>
+                            환경을 구축하여 직접 백엔드 로직을 구성해보았습니다.
+                        </p>
+                        <p className="mt-1">
+                            <span className="text-rose-500">React-query</span>를 사용하여 서버 상태에 대한 최적화를 해볼
+                            수 있었습니다.
+                        </p>
+                        <p className="mt-1">
+                            <span className="text-rose-500">Typescript</span>를 최초로 사용하여 enum, 유틸리티 타입등
+                            다양한 타입을 연습해보았습니다.
+                        </p>
+                        <p className="mt-1">
+                            사용자 인증로직을 직접 처음부터 구축하여 <span className="text-rose-500">인증</span>의 대한
+                            이해를 넓혔습니다.
+                        </p>
+                        <p className="mt-1">
+                            <span className="text-rose-500">어드민 페이지</span>를 제작하여 어드민의 사용자 관할을
+                            구현해보았습니다.
+                        </p>
                         <section className="flex flex-col mt-4 gap-4">
                             <button
                                 onClick={detailHandler}
