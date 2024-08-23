@@ -1,5 +1,6 @@
 import About from '@/components/about';
 import Archive from '@/components/archive';
+import Contact from '@/components/contact';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
 import Intro from '@/components/intro';
@@ -18,6 +19,7 @@ export default function Home() {
                 <Skill />
                 <Archive />
                 <Project />
+                <Contact />
                 <Footer />
             </div>
             <ScrollController />

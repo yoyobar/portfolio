@@ -1,5 +1,5 @@
 'use client';
-import { coding } from '@/util/fonts';
+import { aggro, coding } from '@/util/fonts';
 import { IoIosLink } from 'react-icons/io';
 import AdminProject from './AdminProject';
 import HunsuProject from './HunsuProject';
@@ -7,6 +7,7 @@ import EmotreeProject from './EmotreeProject';
 import BlogProject from './BlogProject';
 import WeatherProject from './WeatherProject';
 import PortFolioProject from './PortFolioProject';
+import { twMerge as tw } from 'tailwind-merge';
 
 const Project = () => {
     const scrollHandler = () => {
@@ -23,7 +24,14 @@ const Project = () => {
                         <div onClick={scrollHandler} className="cursor-pointer w-[25px] h-[25px]">
                             <IoIosLink className="w-full h-full text-gray-200 hover:text-white" />
                         </div>
-                        <div className="text-[50px] font-extrabold border-b border-b-white text-white">Projects</div>
+                        <div
+                            className={tw(
+                                'text-[50px] font-extrabold border-b border-b-white text-white',
+                                aggro.className
+                            )}
+                        >
+                            Projects
+                        </div>
                     </div>
 
                     <PortFolioProject />
@@ -39,6 +47,7 @@ const Project = () => {
                     </span>
                     <span className="animate-flick">|</span>
                 </footer>
+                <div className="contact-container"></div>
             </div>
         </>
     );

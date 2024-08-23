@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    background-color: #0369a1;
-}
-
 /* Webkit (Chrome, Safari) */
 *::-webkit-scrollbar {
     width: 9px;

@@ -3,6 +3,7 @@ import { metadata as meta } from './config/metadata';
 import './globals.css';
 import { pretendard } from '@/util/fonts';
 import Header from '@/components/header';
+import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
     metadataBase: new URL(meta.url),
@@ -27,6 +28,7 @@ export default function RootLayout({
     return (
         <html lang="ko" className={`${pretendard.className}`}>
             <body>
+                <Toaster />
                 <div className="main_root w-full h-full overflow-x-hidden">{children}</div>
                 <div className="portal_root"></div>
             </body>
