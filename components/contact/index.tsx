@@ -11,7 +11,7 @@ import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 import { Textarea } from '../ui/textarea';
 import { useToast } from '../ui/use-toast';
-import { Progress } from '@radix-ui/react-progress';
+import { RiSendPlane2Fill } from 'react-icons/ri';
 
 const formSchema = z.object({
     userName: z
@@ -152,7 +152,15 @@ const Contact = () => {
                                 )}
                             />
                             <Button type="submit" className="w-full" disabled={isSubmitting}>
-                                {isSubmitting ? '전송중...' : '제출'}
+                                {isSubmitting ? (
+                                    <div className="flex gap-2 items-center relative">
+                                        <RiSendPlane2Fill className="animate-send absolute" />
+                                    </div>
+                                ) : (
+                                    <div className="flex gap-2 items-center relative">
+                                        <RiSendPlane2Fill className="absolute left-0" />
+                                    </div>
+                                )}
                             </Button>
                         </form>
                     </Form>

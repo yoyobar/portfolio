@@ -32,11 +32,17 @@ const config = {
                     '50%': { opacity: '0' },
                     '100%': { opacity: '1' },
                 },
+                send: {
+                    '0%': { left: '0px' },
+                    '50%': { left: '10px' },
+                    '100%': { left: '0px' },
+                },
             },
 
             animation: {
                 width: 'width 5s ease forwards',
                 flick: 'flick 1s steps(1,end) infinite',
+                send: 'send 1s ease infinite',
                 'accordion-down': 'accordion-down 0.2s ease-out',
                 'accordion-up': 'accordion-up 0.2s ease-out',
             },
