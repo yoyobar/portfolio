@@ -124,38 +124,40 @@ const Header = () => {
                 variants={list}
                 transition={{ duration: 0.3 }}
             >
-                <div className="flex flex-col items-center p-4 select-none gap-4">
-                    <div
-                        onClick={aboutScrollHandler}
-                        className="hover:text-white cursor-pointer text-gray-200 font-medium text-2xl border-b-2 border-transparent hover:border-b-slate-100 transition"
-                    >
-                        About me
+                {isMenuOpen && (
+                    <div className="flex flex-col items-center p-4 select-none gap-4">
+                        <div
+                            onClick={aboutScrollHandler}
+                            className="hover:text-white cursor-pointer text-gray-200 font-medium text-2xl border-b-2 border-transparent hover:border-b-slate-100 transition"
+                        >
+                            About me
+                        </div>
+                        <div
+                            onClick={skillScrollHandler}
+                            className="hover:text-white cursor-pointer text-gray-200 font-medium text-2xl border-b-2 border-transparent hover:border-b-slate-100 transition"
+                        >
+                            Skills
+                        </div>
+                        <div
+                            onClick={archiveScrollHandler}
+                            className="hover:text-white cursor-pointer text-gray-200 font-medium text-2xl border-b-2 border-transparent hover:border-b-slate-100 transition"
+                        >
+                            Archives
+                        </div>
+                        <div
+                            onClick={projectScrollHandler}
+                            className="hover:text-white cursor-pointer text-gray-200 font-medium text-2xl border-b-2 border-transparent hover:border-b-slate-100 transition"
+                        >
+                            Projects
+                        </div>
+                        <div
+                            onClick={contactScrollHandler}
+                            className="hover:text-white cursor-pointer text-gray-200 font-medium text-2xl border-b-2 border-transparent hover:border-b-slate-100 transition"
+                        >
+                            Contact
+                        </div>
                     </div>
-                    <div
-                        onClick={skillScrollHandler}
-                        className="hover:text-white cursor-pointer text-gray-200 font-medium text-2xl border-b-2 border-transparent hover:border-b-slate-100 transition"
-                    >
-                        Skills
-                    </div>
-                    <div
-                        onClick={archiveScrollHandler}
-                        className="hover:text-white cursor-pointer text-gray-200 font-medium text-2xl border-b-2 border-transparent hover:border-b-slate-100 transition"
-                    >
-                        Archives
-                    </div>
-                    <div
-                        onClick={projectScrollHandler}
-                        className="hover:text-white cursor-pointer text-gray-200 font-medium text-2xl border-b-2 border-transparent hover:border-b-slate-100 transition"
-                    >
-                        Projects
-                    </div>
-                    <div
-                        onClick={contactScrollHandler}
-                        className="hover:text-white cursor-pointer text-gray-200 font-medium text-2xl border-b-2 border-transparent hover:border-b-slate-100 transition"
-                    >
-                        Contact
-                    </div>
-                </div>
+                )}
             </motion.div>
         </>
     );
