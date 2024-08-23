@@ -1,6 +1,8 @@
 'use client';
 import { IoIosLink } from 'react-icons/io';
 import AboutList from './AboutList';
+import { twMerge as tw } from 'tailwind-merge';
+import { aggro } from '@/util/fonts';
 
 const About = () => {
     const scrollHandler = () => {
@@ -17,7 +19,7 @@ const About = () => {
                         <div onClick={scrollHandler} className="cursor-pointer w-[25px] h-[25px]">
                             <IoIosLink className="w-full h-full text-gray-600 hover:text-black" />
                         </div>
-                        <div className="text-[50px] font-extrabold border-b">ABOUT ME</div>
+                        <div className={tw('text-[50px] font-extrabold border-b', aggro.className)}>ABOUT ME</div>
                     </div>
                     <AboutList />
                 </div>

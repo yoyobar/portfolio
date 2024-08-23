@@ -2,7 +2,8 @@
 import { IoIosLink } from 'react-icons/io';
 import * as constData from '@/app/config/const';
 import SkillList from './SkillList';
-import { coding } from '@/util/fonts';
+import { aggro, coding } from '@/util/fonts';
+import { twMerge as tw } from 'tailwind-merge';
 
 const Skill = () => {
     const scrollHandler = () => {
@@ -19,7 +20,14 @@ const Skill = () => {
                         <div onClick={scrollHandler} className="cursor-pointer w-[25px] h-[25px]">
                             <IoIosLink className="w-full h-full text-gray-200 hover:text-white" />
                         </div>
-                        <div className="text-[50px] font-extrabold border-b border-b-white text-white">SKILLS</div>
+                        <div
+                            className={tw(
+                                'text-[50px] font-extrabold border-b border-b-white text-white',
+                                aggro.className
+                            )}
+                        >
+                            SKILLS
+                        </div>
                     </div>
                     <SkillList title="Front-End" data={constData.skillDataFE} />
 

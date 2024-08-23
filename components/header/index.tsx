@@ -50,6 +50,14 @@ const Header = () => {
         setMenuOpen(false);
     };
 
+    const contactScrollHandler = () => {
+        document.querySelector('.contact-container')?.scrollIntoView({
+            behavior: 'smooth',
+        });
+
+        setMenuOpen(false);
+    };
+
     const toggleMenu = () => {
         setMenuOpen(!isMenuOpen);
     };
@@ -94,6 +102,12 @@ const Header = () => {
                     >
                         Projects
                     </div>
+                    <div
+                        onClick={contactScrollHandler}
+                        className="hover:text-rose-500 cursor-pointer text-gray-200 font-medium"
+                    >
+                        Contact
+                    </div>
                 </div>
                 <div
                     onClick={toggleMenu}
@@ -134,6 +148,12 @@ const Header = () => {
                         className="hover:text-white cursor-pointer text-gray-200 font-medium text-2xl border-b-2 border-transparent hover:border-b-slate-100 transition"
                     >
                         Projects
+                    </div>
+                    <div
+                        onClick={contactScrollHandler}
+                        className="hover:text-white cursor-pointer text-gray-200 font-medium text-2xl border-b-2 border-transparent hover:border-b-slate-100 transition"
+                    >
+                        Contact
                     </div>
                 </div>
             </motion.div>

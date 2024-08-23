@@ -1,5 +1,5 @@
 'use client';
-import { coding } from '@/util/fonts';
+import { aggro, coding } from '@/util/fonts';
 import { FaGithub } from 'react-icons/fa';
 import { SiNextdotjs } from 'react-icons/si';
 import { IoIosLink } from 'react-icons/io';
@@ -33,7 +33,14 @@ const Archive = () => {
                         <div onClick={scrollHandler} className="cursor-pointer w-[25px] h-[25px]">
                             <IoIosLink className="w-full h-full text-gray-200 hover:text-white" />
                         </div>
-                        <div className="text-[50px] font-extrabold border-b border-b-white text-white">Archives</div>
+                        <div
+                            className={tw(
+                                'text-[50px] font-extrabold border-b border-b-white text-white',
+                                aggro.className
+                            )}
+                        >
+                            Archives
+                        </div>
                     </div>
 
                     <div ref={sectionRef} className="flex flex-col lg:flex-row gap-10 w-full px-2 md:px-10">

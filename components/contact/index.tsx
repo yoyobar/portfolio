@@ -115,7 +115,7 @@ const Contact = () => {
                                     <FormItem>
                                         <FormLabel>성명</FormLabel>
                                         <FormControl>
-                                            <Input placeholder="Name..." {...field} />
+                                            <Input id="mail-handler" placeholder="Name..." {...field} />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
