@@ -34,7 +34,10 @@ const PortFolioProject = () => {
     return (
         <div className="px-4 lg:px-0 w-full flex flex-col h-fit bg-white rounded-lg shadow-lg shadow-sky-950 border pb-14">
             <article>
-                <div className={tw('w-full text-center text-4xl pt-14', aggro.className)}>포트폴리오 웹 사이트</div>
+                <div className={tw('w-full text-center text-4xl pt-14', aggro.className)}>
+                    <p>포트폴리오</p>
+                    <p>웹 사이트</p>
+                </div>
                 <div className="w-full text-center text-gray-500 pb-12">2024.09 (개인 프로젝트)</div>
             </article>
             <article className="relative flex flex-col lg:flex-row px-2 lg:px-8 gap-4">
