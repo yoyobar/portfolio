@@ -46,7 +46,6 @@ const ModalPicture = ({ onClose, isOpen, parent, src }: ModalProps) => {
                     initial={{ opacity: 0, translateY: 20 }}
                     animate={{ opacity: [1], translateY: 0 }}
                     exit={{ opacity: 0 }}
-                    onClick={(e) => e.stopPropagation()}
                     className="outline-none w-[800px] h-[684px] relative"
                 >
                     <Image
