@@ -4,6 +4,7 @@ import { BiLogoTypescript } from 'react-icons/bi';
 import { SiNextdotjs, SiRedux, SiExpress } from 'react-icons/si';
 import { DiMysql } from 'react-icons/di';
 import { IoLogoVercel } from 'react-icons/io5';
+import { SiReactquery } from 'react-icons/si';
 
 import Figma from '@/public/icon/Figma-logo.svg';
 import Notion from '@/public/icon/Notion-logo.svg';
@@ -63,6 +64,12 @@ export const skillDataFE = [
         label: 'Zustand',
         progress: 70,
         learn: 'Familiar',
+    },
+    {
+        icon: <SiReactquery className="w-12 h-12 text-[#de436a]" />,
+        label: 'React-Query',
+        progress: 40,
+        learn: 'Tried',
     },
 ];
 
