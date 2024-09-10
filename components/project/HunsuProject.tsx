@@ -35,7 +35,7 @@ const HunsuProject = () => {
     return (
         <div className="px-4 lg:px-0 w-full flex flex-col h-fit bg-white rounded-lg shadow-lg shadow-sky-950 border pb-14">
             <article>
-                <div className={tw('w-full text-center text-4xl pt-14', aggro.className)}>훈수왕 (개발중)</div>
+                <div className={tw('w-full text-center text-4xl pt-14', aggro.className)}>훈수왕</div>
                 <div className="w-full text-center text-gray-500 pb-12">2024.08 - 2024.09 (팀 프로젝트)</div>
             </article>
             <article className="relative flex flex-col lg:flex-row px-2 lg:px-8 gap-4">
@@ -43,18 +43,34 @@ const HunsuProject = () => {
                     <CarouselContent>
                         <CarouselItem className="">
                             <div
-                                onClick={() => modalHandler('/img/placeholder.png')}
+                                onClick={() => modalHandler('/img/hunsu_1.png')}
                                 className="max-w-screen h-[300px] lg:w-[380px] md:h-[380px] xl:w-[500px] xl:h-[400px] relative"
                             >
-                                <Image alt="hunsu_project" fill sizes="100vw" className="" src="/img/placeholder.png" />
+                                <Image alt="hunsu_project" fill sizes="100vw" className="" src="/img/hunsu_1.png" />
                             </div>
                         </CarouselItem>
                         <CarouselItem className="">
                             <div
-                                onClick={() => modalHandler('/img/placeholder.png')}
+                                onClick={() => modalHandler('/img/hunsu_2.png')}
                                 className="max-w-screen h-[300px] lg:w-[380px] md:h-[380px] xl:w-[500px] xl:h-[400px] relative"
                             >
-                                <Image alt="hunsu_project" fill sizes="100vw" className="" src="/img/placeholder.png" />
+                                <Image alt="hunsu_project" fill sizes="100vw" className="" src="/img/hunsu_2.png" />
+                            </div>
+                        </CarouselItem>
+                        <CarouselItem className="">
+                            <div
+                                onClick={() => modalHandler('/img/hunsu_3.png')}
+                                className="max-w-screen h-[300px] lg:w-[380px] md:h-[380px] xl:w-[500px] xl:h-[400px] relative"
+                            >
+                                <Image alt="hunsu_project" fill sizes="100vw" className="" src="/img/hunsu_3.png" />
+                            </div>
+                        </CarouselItem>
+                        <CarouselItem className="">
+                            <div
+                                onClick={() => modalHandler('/img/hunsu_4.png')}
+                                className="max-w-screen h-[300px] lg:w-[380px] md:h-[380px] xl:w-[500px] xl:h-[400px] relative"
+                            >
+                                <Image alt="hunsu_project" fill sizes="100vw" className="" src="/img/hunsu_4.png" />
                             </div>
                         </CarouselItem>
                     </CarouselContent>
@@ -99,7 +115,8 @@ const HunsuProject = () => {
                                 </div>
                                 <div>
                                     <p>게시판 CRUD, 질문 작성및 AI 답변</p>
-                                    <p>어드민 사용자 경고 시스템, 이미지 최적화</p>
+                                    <p>어드민 페이지</p>
+                                    <p>실시간 알림</p>
                                 </div>
                             </section>
                             <section className="flex flex-col lg:flex-row gap-2 items-start">
@@ -111,7 +128,9 @@ const HunsuProject = () => {
                                     <p>전체적인 모달 및 UI 구상</p>
                                     <p>기획 및 개발 총괄</p>
                                     <p>어드민 페이지</p>
-                                    <p>사용자 메일 인증</p>
+                                    <p>사용자 메일 인증, Auth 로직</p>
+                                    <p>실시간 알림, Admin 알림</p>
+                                    <p>유저 신고 처리</p>
                                 </div>
                             </section>
                             <section className="flex flex-col lg:flex-row gap-2 items-start">
@@ -140,7 +159,7 @@ const HunsuProject = () => {
                                     <FaCheck />
                                     <div className="font-bold text-rose-600 w-fit">Frontend</div>
                                 </div>
-                                <div>React, Zustand, TypeScript, TailwindCSS</div>
+                                <div>React, React-query, Zustand, TypeScript, TailwindCSS, Tiptap</div>
                             </section>
                             <section className="flex flex-col lg:flex-row gap-2 items-start">
                                 <div className="flex gap-2 items-center min-w-[140px]">

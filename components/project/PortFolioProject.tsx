@@ -74,7 +74,7 @@ const PortFolioProject = () => {
                     <section className="mt-4 md:mt-0">
                         <p>현재 보고 계시는 포트폴리오 페이지입니다.</p>
                         <p className="mt-1">
-                            <span className="text-rose-500">Next.js 15+</span>를 다시 사용해보고, 더욱 친숙해질 수
+                            <span className="text-rose-500">Next.js 14+</span>를 다시 사용해보고, 더욱 친숙해질 수
                             있었습니다.
                         </p>
                         <p className="mt-1">
