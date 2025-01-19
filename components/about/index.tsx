@@ -26,7 +26,7 @@ const About = () => {
                     <AboutList />
                 </div>
             </div>
-            <div className="skill-container"></div>
+            <div className="archive-container"></div>
         </>
     );
 };

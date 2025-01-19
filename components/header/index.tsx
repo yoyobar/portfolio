@@ -85,12 +85,6 @@ const Header = () => {
                         About me
                     </div>
                     <div
-                        onClick={skillScrollHandler}
-                        className="hover:text-rose-500 cursor-pointer text-gray-200 font-medium"
-                    >
-                        Skills
-                    </div>
-                    <div
                         onClick={archiveScrollHandler}
                         className="hover:text-rose-500 cursor-pointer text-gray-200 font-medium"
                     >
