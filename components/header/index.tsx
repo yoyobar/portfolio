@@ -29,13 +29,6 @@ const Header = () => {
         setMenuOpen(false);
     };
 
-    const skillScrollHandler = () => {
-        document.querySelector('.skill-container')?.scrollIntoView({
-            behavior: 'smooth',
-        });
-        setMenuOpen(false);
-    };
-
     const archiveScrollHandler = () => {
         document.querySelector('.archive-container')?.scrollIntoView({
             behavior: 'smooth',
@@ -125,12 +118,6 @@ const Header = () => {
                             className="hover:text-white cursor-pointer text-gray-200 font-medium text-2xl border-b-2 border-transparent hover:border-b-slate-100 transition"
                         >
                             About me
-                        </div>
-                        <div
-                            onClick={skillScrollHandler}
-                            className="hover:text-white cursor-pointer text-gray-200 font-medium text-2xl border-b-2 border-transparent hover:border-b-slate-100 transition"
-                        >
-                            Skills
                         </div>
                         <div
                             onClick={archiveScrollHandler}

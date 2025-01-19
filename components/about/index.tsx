@@ -3,6 +3,7 @@ import { IoIosLink } from 'react-icons/io';
 import AboutList from './AboutList';
 import { twMerge as tw } from 'tailwind-merge';
 import { aggro } from '@/util/fonts';
+import AboutIcon from './AboutIcon';
 
 const About = () => {
     const scrollHandler = () => {
@@ -13,8 +14,8 @@ const About = () => {
 
     return (
         <>
-            <div className="w-full py-32 flex justify-center items-center bg-white">
-                <div className="max-w-[1400px] mb-20 w-full flex flex-col items-center justify-center">
+            <div className="w-full pt-32 flex justify-center items-center bg-white pb-10">
+                <div className="max-w-[1400px] w-full flex flex-col items-center justify-center">
                     <div className="flex gap-2 relative justify-center items-center">
                         <div onClick={scrollHandler} className="cursor-pointer w-[25px] h-[25px]">
                             <IoIosLink className="w-full h-full text-gray-600 hover:text-black" />
@@ -24,6 +25,7 @@ const About = () => {
                         </div>
                     </div>
                     <AboutList />
+                    <AboutIcon />
                 </div>
             </div>
             <div className="archive-container"></div>
