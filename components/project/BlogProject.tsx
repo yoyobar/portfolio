@@ -8,6 +8,7 @@ import { twMerge as tw } from 'tailwind-merge';
 import { Carousel, CarouselContent, CarouselItem } from '../ui/carousel';
 import { type CarouselApi } from '@/components/ui/carousel';
 import { useModalStore } from '@/app/config/store';
+import Dot from '../ui/Dot';
 
 const BlogProject = () => {
     const [api, setApi] = useState<CarouselApi>();
@@ -74,32 +75,57 @@ const BlogProject = () => {
                 </Carousel>
                 <div className="w-full text-sm md:text-lg">
                     <section className="mt-4 md:mt-0">
-                        <span className="text-rose-600">Next.js </span>
-                        <span>최신버전에 익숙해지고자 직접 블로그를 개발해보기위해 시작된 프로젝트 입니다.</span>
-                        <p className="mt-1" />
-                        <span>
-                            직접 <span className="text-rose-600">MDX-plugin</span>을 세팅하며
-                            <span className="text-rose-600"> Markdown</span>
-                            <span>
-                                문법에 익숙해 질 수 있었고 컴포넌트에
-                                <span className="text-rose-600"> MDX</span>를 파싱하는 방법을 익혔습니다.
-                            </span>
-                        </span>
-                        <p className="mt-1" />
-                        <span>
-                            댓글 시스템 구현을 위해 <span className="text-rose-600">Supabase</span>를 활용하면서{' '}
-                            <span className="text-rose-600">NoSQL</span>에 더욱 채화 될 수 있었습니다.
-                        </span>
-                        <p className="mt-1" />
-                        <span>
-                            <span className="text-rose-600">Category, Post, Series</span>등의 다양한 디렉토리를 나누면서{' '}
-                            <span className="text-rose-600">Next.js</span>에 더욱 적응할 수 있었습니다.
-                        </span>
-                        <p className="mt-1" />
-                        <span>
-                            <span className="text-rose-600">Next.js</span>의 <span className="text-rose-600">SEO</span>
-                            에 최적화를 진행하고, 이미지를 최적화 하는 등 다양한 최적화 기법을 연습해볼 수 있었습니다.
-                        </span>
+                        <Dot depths={1}>프레임워크(Gatsby, Jekyll)을 사용하지 않고 제작된 개인 블로그</Dot>
+                        <Dot depths={1}>
+                            <span className="font-semibold">역할</span>
+                        </Dot>
+                        <Dot depths={2}>
+                            <span className="text-rose-600">프로젝트 전체 제작</span>
+                        </Dot>
+                        <Dot depths={2}>
+                            <span className="text-rose-600">MDX-Plugin 자체 세팅 및 구축</span>
+                        </Dot>
+                        <Dot depths={3}>
+                            마크다운의 확장형인 MDX를 Next.js에 조합하여 별개의 프레임워크 없이 블로그 제작
+                        </Dot>
+                        <Dot depths={3}>
+                            디렉토리 구조 구현 및 <span className="font-semibold">SEO 최적화</span>
+                        </Dot>
+                        <Dot depths={3}>
+                            <span className="font-semibold">Category → Post</span> 디렉토리 구조화 블로그 게시글 구현{' '}
+                        </Dot>
+                        <Dot depths={3}>
+                            묶음 게시글 <span className="font-semibold">Series</span> 및{' '}
+                            <span className="font-semibold">Intersection Observer</span>를 활용한 목차 구현
+                        </Dot>
+                        <Dot depths={3}>
+                            모든 게시글은 말머리 (<span className="font-semibold">FrontMatter</span>)에 따라 SEO가
+                            자동으로 구성
+                        </Dot>
+                        <Dot depths={2}>
+                            <span className="text-rose-600">이미지 최적화 및 이미지 서버 구성</span>
+                        </Dot>
+                        <Dot depths={3}>직접 제작한 build용 이미지 최적화 로직 사용</Dot>
+                        <Dot depths={3}>프로젝트 빌드시 이미지를 webp로 변환하고 AWS S3에 전송</Dot>
+                        <Dot depths={3}>주소는 자동으로 변환되어 각 게시글에 할당</Dot>
+                        <Dot depths={2}>
+                            <span className="text-rose-600">사용자 지정 MDX 플러그인 제작</span>
+                        </Dot>
+                        <Dot depths={3}>
+                            목차, 하이퍼링크, 코드블럭, 인용문, Callout등 노션에 존재하는 대부분의 기능을 컴포넌트를
+                            활용하여 Markdown Plugin화 진행
+                        </Dot>
+                        <Dot depths={2}>전체 디자인 담당</Dot>
+                        <Dot depths={3}>Window Desktop를 참고하여 블로그 제작</Dot>
+                        <Dot depths={3}>모바일 반응형 및 창 이동, 최소화 등의 기능 구현</Dot>
+                        <Dot depths={3}>Dark Theme 구현</Dot>
+                        <Dot depths={2}>
+                            <span className="text-rose-600">댓글 기능 / 방문자 통계 구현</span>
+                        </Dot>
+                        <Dot depths={3}>
+                            <span className="font-semibold">Non-SQL Supabase</span>를 활용하여 일별 사용자 통계 및 댓글
+                            기능 구현현
+                        </Dot>
                         <section className="flex flex-col mt-4 gap-4">
                             <button
                                 onClick={detailHandler}
@@ -124,6 +150,7 @@ const BlogProject = () => {
                                     <div className="font-bold text-rose-600 w-fit">Github</div>
                                 </div>
                                 <Link
+                                    target="_blank"
                                     className="text-sky-500 hover:underline"
                                     href={'https://github.com/yoyobar/newBlog'}
                                 >
@@ -135,7 +162,11 @@ const BlogProject = () => {
                                     <FaCheck />
                                     <div className="font-bold text-rose-600 w-fit">URL</div>
                                 </div>
-                                <Link className="text-sky-500 hover:underline" href={'https://wiki.yoyobar.xyz'}>
+                                <Link
+                                    target="_blank"
+                                    className="text-sky-500 hover:underline"
+                                    href={'https://wiki.yoyobar.xyz'}
+                                >
                                     https://wiki.yoyobar.xyz
                                 </Link>
                             </section>

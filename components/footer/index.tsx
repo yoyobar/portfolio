@@ -41,7 +41,7 @@ const Footer = () => {
                     className="text-[50px] cursor-pointer hover:text-gray-400"
                 />
             </div>
-            <div className={tw('text-gray-200', coding.className)}>© 2024. Min Su Kim. All rights reserved.</div>
+            <div className={tw('text-gray-200', coding.className)}>© 2025. Min Su Kim. All rights reserved.</div>
             <div className={tw('text-gray-200 flex gap-2 items-center', coding.className)}>
                 Powered By
                 <SiNextdotjs

@@ -103,6 +103,7 @@ const AdminProject = () => {
                                     <div className="font-bold text-rose-600 w-fit">Github</div>
                                 </div>
                                 <Link
+                                    target="_blank"
                                     className="text-sky-500 hover:underline"
                                     href={'https://github.com/yoyobar/adminpage'}
                                 >

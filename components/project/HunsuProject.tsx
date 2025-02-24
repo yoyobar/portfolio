@@ -8,12 +8,20 @@ import { twMerge as tw } from 'tailwind-merge';
 import { Carousel, CarouselContent, CarouselItem } from '../ui/carousel';
 import { type CarouselApi } from '@/components/ui/carousel';
 import { useModalStore } from '@/app/config/store';
-
+import Dot from '../ui/Dot';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 const HunsuProject = () => {
     const [api, setApi] = useState<CarouselApi>();
     const [current, setCurrent] = useState(0);
     const [count, setCount] = useState(0);
     const { setOpen, setSrc } = useModalStore();
+    const linkHandler = () => {
+        window.open(
+            'https://www.figma.com/design/GUiUSjlhjMjPZkCoD51F0S/%ED%9B%88%EC%88%98%EC%99%95?node-id=2-3&t=sN2SJ94bYhjohPIE-1',
+            '_blank'
+        );
+    };
+
     const modalHandler = (src: string) => {
         setOpen(true);
         setSrc(src);
@@ -78,33 +86,63 @@ const HunsuProject = () => {
                 </Carousel>
                 <div className="w-full text-sm md:text-lg">
                     <section className="mt-4 md:mt-0">
-                        <span>
-                            <span className="text-rose-600">OZ 코딩스쿨</span>에서 주최한 FE-BE 콜라보프로젝트로
-                            진행하게 된 프로젝트입니다.
-                            <span className="text-rose-600"> 팀장</span>을 맡아서 진행하게 되었습니다.
-                        </span>
-                        <p className="mt-1" />
-                        <span>
-                            다시 한번 <span className="text-rose-600">AI</span>를 활용한 플랫폼 서비스를 기획하였고,
-                            대화간 네이버 지식인 서비스에 AI를 배합한 질문 플랫폼을 개발하였습니다.
-                        </span>
-                        <p className="mt-1" />
-                        <span>
-                            <span className="text-rose-600">반응형</span>을 고려한 모던 웹 스타일에 맞는 웹페이지를
-                            구상하여 현대웹에 부합한 형태로 제작하였습니다.
-                        </span>
-                        <p className="mt-1" />
-                        <span>
-                            다양한 모달, 메일 인증 등을 추가하여
-                            <span className="text-rose-600"> 사용자 편의성과 보안</span>을 크게 신경써서 제작해볼 수
-                            있었습니다.
-                        </span>
-                        <p className="mt-1" />
-                        <span>
-                            <span className="text-rose-600">PrivateRoute</span>등을 활용한 사용자 접근제한을 구현하고,
-                            <span className="text-rose-600">어드민 페이지</span>를 구현하여 관리자측면의 편의성을
-                            고려하였습니다.
-                        </span>
+                        <Dot depths={1}>AI 기반 사용자 Q&A 커뮤니티</Dot>
+                        <Dot depths={1}>
+                            <div className="flex items-center gap-2">
+                                FIGMA 디자인 전체 총괄 및 제작
+                                <FaExternalLinkAlt
+                                    onClick={linkHandler}
+                                    title="FIGMA 확인"
+                                    className="text-rose-600 hover:text-rose-800 cursor-pointer"
+                                />
+                            </div>
+                        </Dot>
+                        <Dot depths={1}>
+                            <span className="font-semibold">역할</span>
+                        </Dot>
+                        <Dot depths={2}>
+                            <span className="text-rose-600">프로젝트 일정 관리</span>
+                        </Dot>
+                        <Dot depths={3}>
+                            <span className="font-semibold">팀장</span>을 담당하여 팀원들과의 프로젝트 일정을 관리
+                        </Dot>
+                        <Dot depths={3}>
+                            도메인 연동 및 <span className="font-semibold">AWS CI/CD Client Infra</span> 구축
+                        </Dot>
+                        <Dot depths={3}>
+                            <span className="font-semibold">Figma</span>와{' '}
+                            <span className="font-semibold">Excalidraw</span>를 활용하여 개발 프로세스를 체계화
+                        </Dot>
+                        <Dot depths={3}>
+                            프로젝트 <span className="font-semibold">60%</span> 이상 담당
+                        </Dot>
+                        <Dot depths={2}>회원가입 / 로그인 시스템 구축</Dot>
+                        <Dot depths={3}>사설 회원가입, 비밀번호 찾기, 이메일 인증 기능 구현</Dot>
+                        <Dot depths={2}>레벨 시스템, 경험치 시스템 구축</Dot>
+                        <Dot depths={3}>사용자 경험치 시스템, 레벨 시스템 구현</Dot>
+                        <Dot depths={2}>
+                            <span className="text-rose-600">사용자 글쓰기 / 수정 / 삭제 구축</span>
+                        </Dot>
+                        <Dot depths={3}>
+                            <span className="font-semibold">Tiptap</span> 를 참고하여 Custom Editor 제작
+                        </Dot>
+                        <Dot depths={3}>Markdown 문법 및 코드포맷 지원</Dot>
+                        <Dot depths={3}>
+                            <span className="font-semibold">이미지 첨부</span> 기능 지원
+                        </Dot>
+                        <Dot depths={3}>게시글별 고유 링크 및 공유 기능 구현</Dot>
+                        <Dot depths={3}>간단한 단축키 및 사용자 UX 개선</Dot>
+                        <Dot depths={2}>
+                            <span className="text-rose-600">사용자 실시간 알림 기능 구축</span>
+                        </Dot>
+                        <Dot depths={3}>React-query의 Refetch를 활용하여 댓글 / 좋아요 알림 구현</Dot>
+                        <Dot depths={2}>
+                            <span className="text-rose-600">어드민 페이지 기능 구축</span>
+                        </Dot>
+                        <Dot depths={3}>게시물 신고 기능 구현</Dot>
+                        <Dot depths={3}>Admin 경고 구현, 경고 3회이상시 정지처리</Dot>
+                        <Dot depths={3}>Admin 통계 구현, 사용자 통계 정보 확인</Dot>
+                        <Dot depths={3}>Admin 관리 구현, 사용자 게시글 관리</Dot>
                         <p className="mt-1" />
                         <section className="flex flex-col mt-4 gap-4">
                             <div className="border-b w-full"></div>
@@ -139,6 +177,7 @@ const HunsuProject = () => {
                                     <div className="font-bold text-rose-600 w-fit">Github</div>
                                 </div>
                                 <Link
+                                    target="_blank"
                                     className="text-sky-500 hover:underline"
                                     href={'https://github.com/OZ-Coding-School/oz_03_collabo-004-FE'}
                                 >
@@ -150,7 +189,11 @@ const HunsuProject = () => {
                                     <FaCheck />
                                     <div className="font-bold text-rose-600 w-fit">URL</div>
                                 </div>
-                                <Link className="text-sky-500 hover:underline" href={'https://hunsuking.yoyobar.xyz'}>
+                                <Link
+                                    target="_blank"
+                                    className="text-sky-500 hover:underline"
+                                    href={'https://hunsuking.yoyobar.xyz'}
+                                >
                                     https://hunsuking.yoyobar.xyz
                                 </Link>
                             </section>

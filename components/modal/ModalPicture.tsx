@@ -46,7 +46,7 @@ const ModalPicture = ({ onClose, isOpen, parent, src }: ModalProps) => {
                     initial={{ opacity: 0, translateY: 20 }}
                     animate={{ opacity: [1], translateY: 0 }}
                     exit={{ opacity: 0 }}
-                    className="outline-none w-[800px] h-[684px] relative"
+                    className="outline-none w-[1000px] h-[684px] relative"
                 >
                     <Image
                         fill

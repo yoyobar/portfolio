@@ -8,7 +8,7 @@ import { twMerge as tw } from 'tailwind-merge';
 import { Carousel, CarouselContent, CarouselItem } from '../ui/carousel';
 import { type CarouselApi } from '@/components/ui/carousel';
 import { useModalStore } from '@/app/config/store';
-
+import Dot from '../ui/Dot';
 const PortFolioProject = () => {
     const [api, setApi] = useState<CarouselApi>();
     const [current, setCurrent] = useState(0);
@@ -53,14 +53,6 @@ const PortFolioProject = () => {
                         </CarouselItem>
                         <CarouselItem className="">
                             <div
-                                onClick={() => modalHandler('/img/port_2.png')}
-                                className="max-w-screen h-[300px] lg:w-[380px] md:h-[380px] xl:w-[500px] xl:h-[400px] relative"
-                            >
-                                <Image alt="portfolio_project" fill sizes="100vw" className="" src="/img/port_2.png" />
-                            </div>
-                        </CarouselItem>
-                        <CarouselItem className="">
-                            <div
                                 onClick={() => modalHandler('/img/port_3.gif')}
                                 className="max-w-screen h-[300px] lg:w-[380px] md:h-[380px] xl:w-[500px] xl:h-[400px] relative"
                             >
@@ -72,23 +64,34 @@ const PortFolioProject = () => {
                 </Carousel>
                 <div className="w-full text-sm md:text-lg">
                     <section className="mt-4 md:mt-0">
-                        <p>현재 보고 계시는 포트폴리오 페이지입니다.</p>
-                        <p className="mt-1">
-                            <span className="text-rose-500">Next.js 14+</span>를 다시 사용해보고, 더욱 친숙해질 수
-                            있었습니다.
-                        </p>
-                        <p className="mt-1">
-                            <span className="text-rose-500">NodeMailer</span>를 활용한 메일 전송 시스템을 제작해볼 수
-                            있었습니다.
-                        </p>
-                        <p className="mt-1">
-                            4K부터 핸드폰까지, <span className="text-rose-500">복잡한 반응형</span> 구현을 해볼 수
-                            있었습니다.
-                        </p>
-                        <p className="mt-1">
-                            해외에서 인기가많은 <span className="text-rose-500">shadn/ui + tailwindCSS</span>를 활용해서
-                            UI를 구성해보며 경험을 쌓았습니다.
-                        </p>
+                        <Dot depths={1}>
+                            <span className="font-semibold">역할</span>
+                        </Dot>
+                        <Dot depths={2}>
+                            <span className="text-rose-600">NodeMailer</span>를 활용한 사용자 메일 서비스 구축
+                        </Dot>
+                        <Dot depths={2}>
+                            Mobile / Desktop <span className="text-rose-600">반응형 구축</span>
+                        </Dot>
+                        <Dot depths={3}>
+                            <Link
+                                target="_blank"
+                                className="text-sky-500 hover:underline"
+                                href={'https://tailwindcss.com/docs/responsive-design'}
+                            >
+                                Tailwind Responsive Custom
+                            </Link>
+                            을 통해 구축
+                        </Dot>
+                        <Dot depths={2}>
+                            해외 사용률이 높은 <span className="text-rose-600">Shadn/ui</span>를 채택하여 학습
+                        </Dot>
+                        <Dot depths={3}>자주 사용되는 UI를 Shadn/ui 를 사용하여 제작</Dot>
+                        <Dot depths={2}>
+                            사용자 경험 중심의 <span className="text-rose-600">UI/UX</span> 개선
+                        </Dot>
+                        <Dot depths={3}>IntersectionObserver를 활용해 스크롤 컨트롤 기능 구현</Dot>
+
                         <section className="flex flex-col mt-4 gap-4">
                             <div className="border-b w-full"></div>
                             <section className="flex flex-col lg:flex-row gap-2 items-start">
@@ -104,6 +107,7 @@ const PortFolioProject = () => {
                                     <div className="font-bold text-rose-600 w-fit">Github</div>
                                 </div>
                                 <Link
+                                    target="_blank"
                                     className="text-sky-500 hover:underline"
                                     href={'https://github.com/yoyobar/portfolio'}
                                 >

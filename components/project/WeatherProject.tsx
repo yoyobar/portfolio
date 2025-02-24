@@ -97,6 +97,7 @@ const WeatherProject = () => {
                                     <div className="font-bold text-rose-600 w-fit">Github</div>
                                 </div>
                                 <Link
+                                    target="_blank"
                                     className="text-sky-500 hover:underline"
                                     href={'https://github.com/yoyobar/weatherme'}
                                 >
@@ -109,6 +110,7 @@ const WeatherProject = () => {
                                     <div className="font-bold text-rose-600 w-fit">URL</div>
                                 </div>
                                 <Link
+                                    target="_blank"
                                     className="text-sky-500 hover:underline"
                                     href={'https://weather-me-eight.vercel.app'}
                                 >

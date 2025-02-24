@@ -3,12 +3,12 @@ import { aggro } from '@/util/fonts';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { FaCheck } from 'react-icons/fa';
+import { FaCheck, FaExternalLinkAlt } from 'react-icons/fa';
 import { twMerge as tw } from 'tailwind-merge';
 import { Carousel, CarouselContent, CarouselItem } from '../ui/carousel';
 import { type CarouselApi } from '@/components/ui/carousel';
 import { useModalStore } from '@/app/config/store';
-
+import Dot from '../ui/Dot';
 const EmotreeProject = () => {
     const [api, setApi] = useState<CarouselApi>();
     const [current, setCurrent] = useState(0);
@@ -19,8 +19,8 @@ const EmotreeProject = () => {
         setSrc(src);
     };
 
-    const detailHandler = () => {
-        window.open('https://emotree.yoyobar.xyz');
+    const linkHandler = () => {
+        window.open('https://plaid-plow-0e3.notion.site/Emotree-1824c7349b4c815fac09d260755ed724', '_blank');
     };
 
     useEffect(() => {
@@ -82,39 +82,69 @@ const EmotreeProject = () => {
                 </Carousel>
                 <div className="w-full text-sm md:text-lg">
                     <section className="mt-4 md:mt-0">
-                        <span>
-                            <span className="text-rose-600">OZ 코딩스쿨</span>에서 주최한 FE-BE 협동프로젝트로 진행하게
-                            된 프로젝트입니다.
-                            <span className="text-rose-600"> 팀장</span>을 맡아서 진행하게 되었습니다.
-                        </span>
-                        <p className="mt-1" />
-                        <span>
-                            <span className="text-rose-600">조코딩 2024 GOOGLE 해커톤</span> 출전을 위해
-                            <span className="text-rose-600"> AI</span>를 활용한 플랫폼 서비스를 기획하였고, 대화간
-                            감정분석을 분석하여 이를 이용해 정원을 가꾸는 시뮬레이션 웹 게임을 개발하였습니다.
-                        </span>
-                        <p className="mt-1" />
-                        <span>
-                            <span className="text-rose-600">Preserve-3D</span>를 활용한 2.5D 스타일의 디자인을 설계하여
-                            복잡한 CSS 구조를 다뤄볼 수 있었습니다.
-                        </span>
-                        <p className="mt-1" />
-                        <span>
-                            다양한 사운드 인터랙션, 모달등을 추가하여
-                            <span className="text-rose-600"> 사용자 편의성</span>을 크게 신경써서 제작해볼 수
-                            있었습니다.
-                        </span>
-                        <p className="mt-1" />
-                        <span>
-                            <span className="text-rose-600">PrivateRoute</span>등을 활용한 사용자 접근제한을 구현하고,{' '}
-                            <span className="text-rose-600">어드민 페이지</span>를 구현하여 관리자측면의 편의성도
-                            고려하였습니다.
-                        </span>
-                        <p className="mt-1" />
-                        <span>
-                            규격있는 상태관리를 <span className="text-rose-600">Zustand</span>를 통해 다뤄보며
-                            상태관리와 좀더 친숙해 질 수 있었습니다.
-                        </span>
+                        <Dot depths={1}>AI 기반 사용자간 대화 감정분석 서비스</Dot>
+                        <Dot depths={1}>
+                            <div className="font-semibold flex gap-2 items-center">
+                                조코딩 2024 GOOGLE 해커톤 출품{' '}
+                                <FaExternalLinkAlt
+                                    onClick={linkHandler}
+                                    title="ppt 확인"
+                                    className="text-rose-600 cursor-pointer hover:text-rose-800"
+                                />
+                            </div>
+                        </Dot>
+                        <Dot depths={1}>
+                            <span className="font-semibold">역할</span>
+                        </Dot>
+                        <Dot depths={2}>
+                            <span className="text-rose-600">프로젝트 일정 관리</span>
+                        </Dot>
+                        <Dot depths={3}>
+                            <span className="font-semibold">팀장</span>을 담당하여 프로젝트 일정 관리
+                        </Dot>
+                        <Dot depths={3}>
+                            <span className="font-semibold">Figma</span>와
+                            <span className="font-semibold ml-1">Excalidraw</span>,
+                            <span className="font-semibold ml-1">Notion</span>을 활용하여 개발 프로세스 체계화
+                        </Dot>
+                        <Dot depths={3}>
+                            프로젝트 <span className="font-semibold">60%</span> 이상 담당
+                        </Dot>
+                        <Dot depths={2}>
+                            <span className="text-rose-600">회원가입 / 로그인 시스템 구축</span>
+                        </Dot>
+                        <Dot depths={3}>
+                            <span className="font-semibold">oAuth2</span> 기반 구글 회원가입 / 로그인 로직 구현
+                        </Dot>
+                        <Dot depths={3}>
+                            <span className="font-semibold">PrivateRoute</span>로 내부 접근 권한 제한
+                        </Dot>
+                        <Dot depths={2}>Preserve-3D를 활용한 3d-style Graphic 구현</Dot>
+                        <Dot depths={3}>별도의 Canvas없이 3d-style Graphic 구현</Dot>
+                        <Dot depths={3}>grid를 이용한 사용자 레벨별 UI 변동, 게임같은 경험 제공</Dot>
+                        <Dot depths={2}>
+                            <span className="text-rose-600">레벨 시스템, 경험치 시스템, 통계 시스템 구축</span>
+                        </Dot>
+                        <Dot depths={3}>
+                            유저레벨 / 감정 분석 경험치의 <span className="font-semibold">재귀적인 구조</span> 구현
+                        </Dot>
+                        <Dot depths={3}>
+                            레벨을 직관적으로 볼 수 있는 감정별 <span className="font-semibold">통계데이터</span> 구현
+                        </Dot>
+                        <Dot depths={2}>
+                            <span className="text-rose-600">어드민 페이지 구축</span>
+                        </Dot>
+                        <Dot depths={3}>
+                            <span className="font-semibold">사용자 계정 관리, 사용량 통계</span> 등 Admin 페이지 구현
+                        </Dot>
+                        <Dot depths={2}>사운드 인터랙션 및 UX 담당</Dot>
+                        <Dot depths={3}>배경 음악, 전체 애니메이션 등 효과별 음성 제공</Dot>
+                        <Dot depths={2}>
+                            <span className="text-rose-600">배포 서비스 담당</span>
+                        </Dot>
+                        <Dot depths={3}>
+                            AWS를 활용한 자동 CI/CD 및 <span className="font-semibold">Client Infra</span> 담당
+                        </Dot>
                         <section className="flex flex-col mt-4 gap-4">
                             <div className="border-b w-full"></div>
                             <section className="flex flex-col lg:flex-row gap-2 items-start">
@@ -143,19 +173,11 @@ const EmotreeProject = () => {
                                     <div className="font-bold text-rose-600 w-fit">Github</div>
                                 </div>
                                 <Link
+                                    target="_blank"
                                     className="text-sky-500 hover:underline"
                                     href={'https://github.com/OZ-Coding-School/oz_03_main-003-FE'}
                                 >
                                     https://github.com/OZ-Coding-School
-                                </Link>
-                            </section>
-                            <section className="flex flex-col lg:flex-row gap-2 items-start">
-                                <div className="flex gap-2 items-center min-w-[140px]">
-                                    <FaCheck />
-                                    <div className="font-bold text-rose-600 w-fit">URL</div>
-                                </div>
-                                <Link className="text-sky-500 hover:underline" href={'https://emotree.yoyobar.xyz'}>
-                                    https://emotree.yoyobar.xyz
                                 </Link>
                             </section>
                             <section className="flex flex-col lg:flex-row gap-2 items-start">
