@@ -43,8 +43,8 @@ const AdminProject = () => {
                 <div className="w-full text-center text-gray-500 pb-12">2024.04 - 2024.05 (개인 프로젝트)</div>
             </article>
             <article className="relative flex flex-col lg:flex-row px-2 lg:px-8 gap-4">
-                <Carousel setApi={setApi} className="cursor-grab max-w-full lg:max-w-[380px] xl:max-w-[500px]">
-                    <CarouselContent>
+                <Carousel setApi={setApi} className="max-w-full lg:max-w-[380px] xl:max-w-[500px]">
+                    <CarouselContent className="cursor-grab">
                         <CarouselItem className="">
                             <div
                                 onClick={() => modalHandler('/img/admin_1.png')}

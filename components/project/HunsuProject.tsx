@@ -15,6 +15,9 @@ const HunsuProject = () => {
     const [current, setCurrent] = useState(0);
     const [count, setCount] = useState(0);
     const { setOpen, setSrc } = useModalStore();
+    const detailHandler = () => {
+        window.open('https://plaid-plow-0e3.notion.site/Hunsuking-1a74c7349b4c80bf9ab4cfcc2e542e6b');
+    };
     const linkHandler = () => {
         window.open(
             'https://www.figma.com/design/GUiUSjlhjMjPZkCoD51F0S/%ED%9B%88%EC%88%98%EC%99%95?node-id=2-3&t=sN2SJ94bYhjohPIE-1',
@@ -47,8 +50,8 @@ const HunsuProject = () => {
                 <div className="w-full text-center text-gray-500 pb-12">2024.08 - 2024.09 (팀 프로젝트)</div>
             </article>
             <article className="relative flex flex-col lg:flex-row px-2 lg:px-8 gap-4">
-                <Carousel setApi={setApi} className="cursor-grab max-w-full lg:max-w-[380px] xl:max-w-[500px]">
-                    <CarouselContent>
+                <Carousel setApi={setApi} className="max-w-full lg:max-w-[380px] xl:max-w-[500px]">
+                    <CarouselContent className="cursor-grab">
                         <CarouselItem className="">
                             <div
                                 onClick={() => modalHandler('/img/hunsu_1.png')}
@@ -143,7 +146,12 @@ const HunsuProject = () => {
                         <Dot depths={3}>Admin 경고 구현, 경고 3회이상시 정지처리</Dot>
                         <Dot depths={3}>Admin 통계 구현, 사용자 통계 정보 확인</Dot>
                         <Dot depths={3}>Admin 관리 구현, 사용자 게시글 관리</Dot>
-                        <p className="mt-1" />
+                        <button
+                            onClick={detailHandler}
+                            className="mt-4 hover:bg-slate-700 transition w-[200px] py-1 px-4 rounded-sm bg-black text-white"
+                        >
+                            자세히 보기
+                        </button>
                         <section className="flex flex-col mt-4 gap-4">
                             <div className="border-b w-full"></div>
                             <section className="flex flex-col lg:flex-row gap-2 items-start">

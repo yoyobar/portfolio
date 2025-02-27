@@ -11,6 +11,7 @@ import { twMerge as tw } from 'tailwind-merge';
 import ModalPortal from '../modal/ModalPortal';
 import ModalPicture from '../modal/ModalPicture';
 import { useModalStore } from '@/app/config/store';
+import TodoProject from './TodoProject';
 
 const Project = () => {
     const { modal, setOpen } = useModalStore();
@@ -38,6 +39,7 @@ const Project = () => {
                         </div>
                     </div>
 
+                    <TodoProject />
                     <PortFolioProject />
                     <HunsuProject />
                     <EmotreeProject />

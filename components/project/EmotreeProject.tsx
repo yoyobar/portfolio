@@ -19,6 +19,10 @@ const EmotreeProject = () => {
         setSrc(src);
     };
 
+    const detailHandler = () => {
+        window.open('https://plaid-plow-0e3.notion.site/Emotree-1a74c7349b4c804bb698c8b490f79aed');
+    };
+
     const linkHandler = () => {
         window.open('https://plaid-plow-0e3.notion.site/Emotree-1824c7349b4c815fac09d260755ed724', '_blank');
     };
@@ -43,8 +47,8 @@ const EmotreeProject = () => {
                 <div className="w-full text-center text-gray-500 pb-12">2024.07 - 2024.08 (팀 프로젝트)</div>
             </article>
             <article className="relative flex flex-col lg:flex-row px-2 lg:px-8 gap-4">
-                <Carousel setApi={setApi} className="cursor-grab max-w-full lg:max-w-[380px] xl:max-w-[500px]">
-                    <CarouselContent>
+                <Carousel setApi={setApi} className="max-w-full lg:max-w-[380px] xl:max-w-[500px]">
+                    <CarouselContent className="cursor-grab">
                         <CarouselItem className="">
                             <div
                                 onClick={() => modalHandler('/img/emotree_1.gif')}
@@ -145,6 +149,12 @@ const EmotreeProject = () => {
                         <Dot depths={3}>
                             AWS를 활용한 자동 CI/CD 및 <span className="font-semibold">Client Infra</span> 담당
                         </Dot>
+                        <button
+                            onClick={detailHandler}
+                            className="mt-4 hover:bg-slate-700 transition w-[200px] py-1 px-4 rounded-sm bg-black text-white"
+                        >
+                            자세히 보기
+                        </button>
                         <section className="flex flex-col mt-4 gap-4">
                             <div className="border-b w-full"></div>
                             <section className="flex flex-col lg:flex-row gap-2 items-start">
