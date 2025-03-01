@@ -1,21 +1,27 @@
 import React, { ReactNode } from 'react';
-
-const Dot = ({ children, depths }: { children: ReactNode; depths: 1 | 2 | 3 }) => {
-    return depths === 1 ? (
-        <div className="flex gap-2 items-center mt-1">
-            <div className="w-1.5 h-1.5 bg-stone-800 rounded-full text-sm shrink-0" />
+import { FaCheckSquare } from 'react-icons/fa';
+import { FaDiamond } from 'react-icons/fa6';
+import { GoDotFill } from 'react-icons/go';
+const Dot = ({ children, type }: { children: ReactNode; type: 'dot' | 'check' | 'diamond' | 'title' }) => {
+    return type === 'dot' ? (
+        <div className="flex gap-2 items-center mt-1 ml-1">
+            <GoDotFill className="text-[0.75rem] shrink-0" />
             <div>{children}</div>
         </div>
-    ) : depths === 2 ? (
-        <div className="flex gap-2 items-center mt-1">
-            <div className="w-1.5 h-1.5 border border-stone-800 rounded-sm ml-5 shrink-0" />
+    ) : type === 'check' ? (
+        <div className="flex gap-2 items-center mt-3 ml-0.5 font-semibold">
+            <FaCheckSquare className="text-green-500 shrink-0" />
+            <div>{children}</div>
+        </div>
+    ) : type === 'diamond' ? (
+        <div className="flex gap-2 items-center mt-1 ml-1.5">
+            <FaDiamond className="text-sky-500 text-[0.5rem] shrink-0" />
             <div>{children}</div>
         </div>
     ) : (
-        depths === 3 && (
-            <div className="flex gap-2 items-center mt-1">
-                <div className="w-1.5 h-1.5 bg-stone-800 ml-10 shrink-0" />
-                <div>{children}</div>
+        type === 'title' && (
+            <div className="flex gap-2 items-center mt-3">
+                <div className="text-xl font-bold">{children}</div>
             </div>
         )
     );

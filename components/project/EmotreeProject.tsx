@@ -19,14 +19,6 @@ const EmotreeProject = () => {
         setSrc(src);
     };
 
-    const detailHandler = () => {
-        window.open('https://plaid-plow-0e3.notion.site/Emotree-1a74c7349b4c804bb698c8b490f79aed');
-    };
-
-    const linkHandler = () => {
-        window.open('https://plaid-plow-0e3.notion.site/Emotree-1824c7349b4c815fac09d260755ed724', '_blank');
-    };
-
     useEffect(() => {
         if (!api) {
             return;
@@ -43,7 +35,8 @@ const EmotreeProject = () => {
     return (
         <div className="px-4 lg:px-0 w-full flex flex-col h-fit bg-white rounded-lg shadow-lg shadow-sky-950 border pb-14">
             <article>
-                <div className={tw('w-full text-center text-4xl pt-14', aggro.className)}>Emotree</div>
+                <div className={tw('w-full text-center text-4xl pt-14', aggro.className)}>AI 감정 분석 시뮬레이션</div>
+                <div className={tw('w-full text-center text-xl', aggro.className)}>Emotree</div>
                 <div className="w-full text-center text-gray-500 pb-12">2024.07 - 2024.08 (팀 프로젝트)</div>
             </article>
             <article className="relative flex flex-col lg:flex-row px-2 lg:px-8 gap-4">
@@ -85,76 +78,81 @@ const EmotreeProject = () => {
                     <div className="text-center mt-2 text-gray-400 cursor-default select-none">{`${current} / ${count}`}</div>
                 </Carousel>
                 <div className="w-full text-sm md:text-lg">
-                    <section className="mt-4 md:mt-0">
-                        <Dot depths={1}>AI 기반 사용자간 대화 감정분석 서비스</Dot>
-                        <Dot depths={1}>
-                            <div className="font-semibold flex gap-2 items-center">
-                                조코딩 2024 GOOGLE 해커톤 출품{' '}
-                                <FaExternalLinkAlt
-                                    onClick={linkHandler}
-                                    title="ppt 확인"
-                                    className="text-rose-600 cursor-pointer hover:text-rose-800"
-                                />
-                            </div>
+                    <section className="flex flex-col mt-4">
+                        <Dot type="title">주요 역할 및 구현 내용</Dot>
+                        <Dot type="check">
+                            <span className="text-rose-600">조코딩 2024 AI 해커톤 출품 - 예선 통과</span>
                         </Dot>
-                        <Dot depths={1}>
-                            <span className="font-semibold">역할</span>
+
+                        <Dot type="dot">
+                            Figma · Excalidraw · Notion 활용 → &nbsp;
+                            <span className="font-semibold">개발 프로세스 체계화 및 문서화</span>
                         </Dot>
-                        <Dot depths={2}>
-                            <span className="text-rose-600">프로젝트 일정 관리</span>
+                        <Dot type="check">회원가입 및 인증 시스템 구축</Dot>
+                        <Dot type="dot">PrivateRoute 적용 → 비회원 접근 차단 및 권한 관리</Dot>
+                        <Dot type="check">3D 스타일 UI 및 게이미피케이션 적용</Dot>
+                        <Dot type="dot">
+                            CSS transform-style: preserve-3D 활용 → &nbsp;
+                            <span className="text-highlight">Canvas 없이 3D 스타일 UI 구현</span>
                         </Dot>
-                        <Dot depths={3}>
-                            <span className="font-semibold">팀장</span>을 담당하여 프로젝트 일정 관리
+                        <Dot type="dot">Grid 레이아웃 기반 사용자 레벨별 UI 변화 → 게임 같은 몰입감 제공</Dot>
+                        <Dot type="check">레벨·경험치 및 감정 통계 시스템 개발</Dot>
+                        <Dot type="dot">
+                            <span className="font-semibold">AI 감정 분석 기반 경험치 및 레벨링 로직 구현</span>
                         </Dot>
-                        <Dot depths={3}>
-                            <span className="font-semibold">Figma</span>와
-                            <span className="font-semibold ml-1">Excalidraw</span>,
-                            <span className="font-semibold ml-1">Notion</span>을 활용하여 개발 프로세스 체계화
+                        <Dot type="dot">
+                            감정별 통계 데이터 <span className="text-highlight">그래프 시각화</span>
                         </Dot>
-                        <Dot depths={3}>
-                            프로젝트 <span className="font-semibold">60%</span> 이상 담당
+                        <Dot type="check">어드민 페이지 기능 구축</Dot>
+                        <Dot type="dot">
+                            <span className="font-semibold">사용자 관리 및 통계 데이터 제공</span>
                         </Dot>
-                        <Dot depths={2}>
-                            <span className="text-rose-600">회원가입 / 로그인 시스템 구축</span>
+                        <Dot type="dot">어드민 전용 사용자 계정 관리 및 사용량 분석 기능 추가</Dot>
+                        <Dot type="check">사운드 인터랙션 및 UX 최적화</Dot>
+                        <Dot type="dot">배경 음악, 버튼 상호작용, 대화방 내 효과음 적용</Dot>
+                        <Dot type="dot">
+                            크롬의 자동 재생 정책 대응 → &nbsp;
+                            <span className="font-semibold">오픈소스 사운드 활용 최적화</span>
                         </Dot>
-                        <Dot depths={3}>
-                            <span className="font-semibold">oAuth2</span> 기반 구글 회원가입 / 로그인 로직 구현
+                        <Dot type="check">AWS 기반 배포 및 CI/CD 구축</Dot>
+                        <Dot type="dot">
+                            GitHub Actions → <span className="font-semibold">자동 배포 파이프라인 구축</span>
                         </Dot>
-                        <Dot depths={3}>
-                            <span className="font-semibold">PrivateRoute</span>로 내부 접근 권한 제한
+                        <Dot type="dot">AWS Route53 + SSL 인증서 적용</Dot>
+                        <Dot type="title">성과 및 배운 점</Dot>
+                        <Dot type="diamond"> OAuth2 인증 Flow 이해, 서드파티 계정 연동 및 보안 고려</Dot>
+                        <Dot type="diamond">
+                            대화 감정 분석 <span className="font-semibold">데이터 그래프 시각화</span>, 사용자용 &
+                            어드민용 통계 차별화
                         </Dot>
-                        <Dot depths={2}>Preserve-3D를 활용한 3d-style Graphic 구현</Dot>
-                        <Dot depths={3}>별도의 Canvas없이 3d-style Graphic 구현</Dot>
-                        <Dot depths={3}>grid를 이용한 사용자 레벨별 UI 변동, 게임같은 경험 제공</Dot>
-                        <Dot depths={2}>
-                            <span className="text-rose-600">레벨 시스템, 경험치 시스템, 통계 시스템 구축</span>
-                        </Dot>
-                        <Dot depths={3}>
-                            유저레벨 / 감정 분석 경험치의 <span className="font-semibold">재귀적인 구조</span> 구현
-                        </Dot>
-                        <Dot depths={3}>
-                            레벨을 직관적으로 볼 수 있는 감정별 <span className="font-semibold">통계데이터</span> 구현
-                        </Dot>
-                        <Dot depths={2}>
-                            <span className="text-rose-600">어드민 페이지 구축</span>
-                        </Dot>
-                        <Dot depths={3}>
-                            <span className="font-semibold">사용자 계정 관리, 사용량 통계</span> 등 Admin 페이지 구현
-                        </Dot>
-                        <Dot depths={2}>사운드 인터랙션 및 UX 담당</Dot>
-                        <Dot depths={3}>배경 음악, 전체 애니메이션 등 효과별 음성 제공</Dot>
-                        <Dot depths={2}>
-                            <span className="text-rose-600">배포 서비스 담당</span>
-                        </Dot>
-                        <Dot depths={3}>
-                            AWS를 활용한 자동 CI/CD 및 <span className="font-semibold">Client Infra</span> 담당
-                        </Dot>
-                        <button
-                            onClick={detailHandler}
-                            className="mt-4 hover:bg-slate-700 transition w-[200px] py-1 px-4 rounded-sm bg-black text-white"
-                        >
-                            자세히 보기
-                        </button>
+                        <Dot type="diamond"> 사운드 인터랙션 최적화, 크롬 정책을 고려한 오디오 재생 방식 적용</Dot>
+                        <Dot type="diamond">AWS 기반 인프라 구축 경험, Git 업데이트 시 자동 CI/CD 연동</Dot>
+
+                        <div className="gap-2 flex">
+                            <Link
+                                href={'https://plaid-plow-0e3.notion.site/Emotree-1a94c7349b4c8083bbd7f665b581fae9'}
+                                target="_blank"
+                                className="hover:bg-slate-700 transition w-[150px] py-1 px-4 rounded-sm bg-black text-white text-center mt-4"
+                            >
+                                자세히 보기
+                            </Link>
+                            <Link
+                                href={
+                                    'https://www.figma.com/design/CxT7yiciTNPFwVH6XCwsbX/3Team-EmoTree-UI?node-id=0-1&t=SRD9KJCSwdrHqfLE-1'
+                                }
+                                target="_blank"
+                                className="hover:bg-stone-600 transition w-[150px] py-1 px-4 rounded-sm bg-stone-300 text-center mt-4 hover:text-white flex gap-2 justify-center items-center"
+                            >
+                                FIGMA
+                            </Link>
+                            <Link
+                                href={'https://plaid-plow-0e3.notion.site/Emotree-1a94c7349b4c806fa010d618df08fa6a'}
+                                target="_blank"
+                                className="hover:bg-stone-600 transition w-[150px] py-1 px-4 rounded-sm bg-stone-300 text-center mt-4 hover:text-white flex gap-2 justify-center items-center"
+                            >
+                                해커톤 발표자료
+                            </Link>
+                        </div>
                         <section className="flex flex-col mt-4 gap-4">
                             <div className="border-b w-full"></div>
                             <section className="flex flex-col lg:flex-row gap-2 items-start">

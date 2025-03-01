@@ -4,25 +4,17 @@ import { FaGithub } from 'react-icons/fa';
 import { SiNextdotjs } from 'react-icons/si';
 import { IoIosLink } from 'react-icons/io';
 import { twMerge as tw } from 'tailwind-merge';
-import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
+import Link from 'next/link';
 const Archive = () => {
     const [githubHover, setGithubHover] = useState(false);
     const [blogHover, setBlogHover] = useState(false);
 
     const sectionRef = useRef(null);
-    const inViewSection = useInView(sectionRef, { once: true });
     const scrollHandler = () => {
         document.querySelector('.archive-container')?.scrollIntoView({
             behavior: 'smooth',
         });
-    };
-
-    const githubHandler = () => {
-        window.open('https://github.com/yoyobar/');
-    };
-    const blogHandler = () => {
-        window.open('https://wiki.yoyobar.xyz/');
     };
 
     return (
@@ -44,12 +36,11 @@ const Archive = () => {
                     </div>
 
                     <div ref={sectionRef} className="flex flex-col lg:flex-row gap-10 w-full px-2 md:px-10">
-                        <motion.menu
+                        <Link
                             onMouseEnter={() => setGithubHover(true)}
                             onMouseLeave={() => setGithubHover(false)}
-                            onClick={githubHandler}
-                            whileHover={{ translateY: -5 }}
-                            animate={{ opacity: inViewSection ? 1 : 0 }}
+                            href={'https://github.com/yoyobar/'}
+                            target="_blank"
                             className="bg-white relative z-10 cursor-pointer select-none w-full h-[315px] rounded-md px-8 flex flex-col gap-4 justify-center"
                         >
                             <div className="flex gap-4 text-2xl items-center">
@@ -75,13 +66,12 @@ const Archive = () => {
                                 <div className="w-1 h-1 rounded-full bg-rose-500"></div>
                                 <div>공부하고 기록한 학습기록</div>
                             </li>
-                        </motion.menu>
-                        <motion.menu
+                        </Link>
+                        <Link
                             onMouseEnter={() => setBlogHover(true)}
                             onMouseLeave={() => setBlogHover(false)}
-                            onClick={blogHandler}
-                            animate={{ opacity: inViewSection ? 1 : 0 }}
-                            whileHover={{ translateY: -5 }}
+                            href={'https://wiki.yoyobar.xyz/'}
+                            target="_blank"
                             className="relative z-10 bg-white cursor-pointer select-none w-full h-[315px] rounded-md px-8 flex flex-col gap-4 justify-center"
                         >
                             <div className="flex gap-4 text-2xl items-center">
@@ -104,7 +94,7 @@ const Archive = () => {
                                 <div className="w-1 h-1 rounded-full bg-rose-500"></div>
                                 <div>프로젝트 회고록</div>
                             </li>
-                        </motion.menu>
+                        </Link>
                     </div>
                 </div>
                 <div className="hidden select-none 2xl:flex absolute text-[200px] -rotate-[14deg] -right-10 -bottom-14 text-white opacity-50 gap-2">

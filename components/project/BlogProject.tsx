@@ -20,10 +20,6 @@ const BlogProject = () => {
         setSrc(src);
     };
 
-    const detailHandler = () => {
-        window.open('https://wiki.yoyobar.xyz/posts/Project/blog_page');
-    };
-
     useEffect(() => {
         if (!api) {
             return;
@@ -40,7 +36,8 @@ const BlogProject = () => {
     return (
         <div className="px-4 lg:px-0 w-full flex flex-col h-fit bg-white rounded-lg shadow-lg shadow-sky-950 border pb-14">
             <article>
-                <div className={tw('w-full text-center text-4xl pt-14', aggro.className)}>블로그 웹 사이트</div>
+                <div className={tw('w-full text-center text-4xl pt-14', aggro.className)}>Next.js 블로그</div>
+                <div className={tw('w-full text-center text-xl', aggro.className)}>Trouble Wiki</div>
                 <div className="w-full text-center text-gray-500 pb-12">2024.05 - 2024.06 (개인 프로젝트)</div>
             </article>
             <article className="relative flex flex-col lg:flex-row px-2 lg:px-8 gap-4">
@@ -75,74 +72,84 @@ const BlogProject = () => {
                 </Carousel>
                 <div className="w-full text-sm md:text-lg">
                     <section className="mt-4 md:mt-0">
-                        <Dot depths={1}>프레임워크(Gatsby, Jekyll)을 사용하지 않고 제작된 개인 블로그</Dot>
-                        <Dot depths={1}>
-                            <span className="font-semibold">역할</span>
+                        <Dot type="title">주요 역할 및 구현 내용</Dot>
+                        <Dot type="check">프로젝트 전반 제작</Dot>
+                        <Dot type="dot">
+                            Next.js App-router 기반
+                            <span className="text-highlight"> 블로그 자체 구축</span>
                         </Dot>
-                        <Dot depths={2}>
-                            <span className="text-rose-600">프로젝트 전체 제작</span>
+                        <Dot type="dot">
+                            MDX-Plugin <span className="font-semibold">자체 개발</span>
                         </Dot>
-                        <Dot depths={2}>
-                            <span className="text-rose-600">MDX-Plugin 자체 세팅 및 구축</span>
+                        <Dot type="dot">확장된 마크다운 기능(목차, 코드블럭, 인용, Callout등) 추가</Dot>
+                        <Dot type="check">SEO 및 콘텐츠 관리</Dot>
+                        <Dot type="dot">
+                            Category → Post 구조 설계, <span className="font-semibold">Series</span> 기능 및 목차 자동
+                            생성 (IntersectionObserver 활용)
                         </Dot>
-                        <Dot depths={3}>
-                            마크다운의 확장형인 MDX를 Next.js에 조합하여 별개의 프레임워크 없이 블로그 제작
+                        <Dot type="dot">
+                            <span className="font-semibold">frontmatter 기반 SEO 최적화</span>, 모든 게시글에 자동
+                            메타데이터 적용
                         </Dot>
-                        <Dot depths={3}>
-                            디렉토리 구조 구현 및 <span className="font-semibold">SEO 최적화</span>
+                        <Dot type="check">이미지 최적화 및 서버 연동</Dot>
+                        <Dot type="dot">
+                            <span className="font-semibold">빌드 시 이미지 WebP 변환 + AWS S3 업로드</span>,
+                            클라이언트에 최적화된 이미지 자동 제공
                         </Dot>
-                        <Dot depths={3}>
-                            <span className="font-semibold">Category → Post</span> 디렉토리 구조화 블로그 게시글 구현{' '}
+                        <Dot type="dot">
+                            이미지 최적화 로직을 통해
+                            <span className="text-highlight">&nbsp;LCP 11.5s → 7.2s / FCP 1.7s → 0.8s로 40%&nbsp;</span>
+                            성능 개선
                         </Dot>
-                        <Dot depths={3}>
-                            묶음 게시글 <span className="font-semibold">Series</span> 및{' '}
-                            <span className="font-semibold">Intersection Observer</span>를 활용한 목차 구현
+                        <Dot type="check">UI/UX & 디자인</Dot>
+                        <Dot type="dot">
+                            <span className="font-semibold">Windows 스타일 블로그</span> UI 설계, 창 이동·최소화 기능
+                            구현
                         </Dot>
-                        <Dot depths={3}>
-                            모든 게시글은 말머리 (<span className="font-semibold">FrontMatter</span>)에 따라 SEO가
-                            자동으로 구성
+                        <Dot type="dot">
+                            <span className="font-semibold">반응형 디자인 및 다크모드 지원</span>
                         </Dot>
-                        <Dot depths={2}>
-                            <span className="text-rose-600">이미지 최적화 및 이미지 서버 구성</span>
+                        <Dot type="check">백엔드 및 데이터 관리</Dot>
+                        <Dot type="dot">
+                            <span className="font-semibold">
+                                Supabase 기반 <span className="text-rose-600">댓글 및 방문자 통계 시스템</span> 구축
+                            </span>
                         </Dot>
-                        <Dot depths={3}>직접 제작한 build용 이미지 최적화 로직 사용</Dot>
-                        <Dot depths={3}>프로젝트 빌드시 이미지를 webp로 변환하고 AWS S3에 전송</Dot>
-                        <Dot depths={3}>주소는 자동으로 변환되어 각 게시글에 할당</Dot>
-                        <Dot depths={2}>
-                            <span className="text-rose-600">사용자 지정 MDX 플러그인 제작</span>
+                        <Dot type="dot">
+                            <span className="font-semibold">Non-SQL 데이터베이스 경험</span>, SQL 대비 장단점 분석
                         </Dot>
-                        <Dot depths={3}>
-                            목차, 하이퍼링크, 코드블럭, 인용문, Callout등 노션에 존재하는 대부분의 기능을 컴포넌트를
-                            활용하여 Markdown Plugin화 진행
+                        <Dot type="title">성과 및 배운점</Dot>
+                        <Dot type="diamond">
+                            <span className="font-semibold">웹 최적화 기법 적용</span>, 성능 개선 및 SEO 경험 확보
                         </Dot>
-                        <Dot depths={2}>전체 디자인 담당</Dot>
-                        <Dot depths={3}>Window Desktop를 참고하여 블로그 제작</Dot>
-                        <Dot depths={3}>모바일 반응형 및 창 이동, 최소화 등의 기능 구현</Dot>
-                        <Dot depths={3}>Dark Theme 구현</Dot>
-                        <Dot depths={2}>
-                            <span className="text-rose-600">댓글 기능 / 방문자 통계 구현</span>
+                        <Dot type="diamond">
+                            <span className="font-semibold">MDX 활용 경험</span>, 현대 웹사이트에서 Markdown을 활용하는
+                            방식 습득
                         </Dot>
-                        <Dot depths={3}>
-                            <span className="font-semibold">Non-SQL Supabase</span>를 활용하여 일별 사용자 통계 및 댓글
-                            기능 구현현
+                        <Dot type="diamond">
+                            <span className="font-semibold">Supabase + S3 연동</span>, CDN 활용 및 클라우드 스토리지
+                            경험 습득
+                        </Dot>
+                        <Dot type="diamond">
+                            <span className="font-semibold">
+                                풀스택 프로젝트 완성, 기획부터 배포까지 전 과정 직접 수행
+                            </span>
                         </Dot>
                         <section className="flex flex-col mt-4 gap-4">
-                            <button
-                                onClick={detailHandler}
-                                className="hover:bg-slate-700 transition w-[200px] py-1 px-4 rounded-sm bg-black text-white"
+                            <Link
+                                href={'https://wiki.yoyobar.xyz/posts/Project/blog_page'}
+                                target="_blank"
+                                className="hover:bg-slate-700 transition w-[150px] py-1 px-4 rounded-sm bg-black text-white text-center"
                             >
                                 자세히 보기
-                            </button>
+                            </Link>
                             <div className="border-b w-full"></div>
                             <section className="flex flex-col lg:flex-row gap-2 items-start">
                                 <div className="flex gap-2 items-center min-w-[140px]">
                                     <FaCheck />
                                     <div className="font-bold text-rose-600 w-fit">주요 기능</div>
                                 </div>
-                                <div className="">
-                                    카테고리 분류, 시리즈 분류, 게시글, 음악 재생등 블로그 플랫폼에 존재하는 대부분의
-                                    기능
-                                </div>
+                                <p>카테고리 분류, 시리즈 분류, 게시글, 음악 재생등</p>
                             </section>
                             <section className="flex flex-col lg:flex-row gap-2 items-start">
                                 <div className="flex gap-2 items-center min-w-[140px]">

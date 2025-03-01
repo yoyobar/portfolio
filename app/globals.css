@@ -17,3 +17,7 @@
     background-color: #dc5460;
     border-radius: 0px;
 }
+
+.text-highlight {
+    @apply font-semibold text-rose-600;
+}

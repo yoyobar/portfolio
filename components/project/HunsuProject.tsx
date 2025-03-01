@@ -9,21 +9,11 @@ import { Carousel, CarouselContent, CarouselItem } from '../ui/carousel';
 import { type CarouselApi } from '@/components/ui/carousel';
 import { useModalStore } from '@/app/config/store';
 import Dot from '../ui/Dot';
-import { FaExternalLinkAlt } from 'react-icons/fa';
 const HunsuProject = () => {
     const [api, setApi] = useState<CarouselApi>();
     const [current, setCurrent] = useState(0);
     const [count, setCount] = useState(0);
     const { setOpen, setSrc } = useModalStore();
-    const detailHandler = () => {
-        window.open('https://plaid-plow-0e3.notion.site/Hunsuking-1a74c7349b4c80bf9ab4cfcc2e542e6b');
-    };
-    const linkHandler = () => {
-        window.open(
-            'https://www.figma.com/design/GUiUSjlhjMjPZkCoD51F0S/%ED%9B%88%EC%88%98%EC%99%95?node-id=2-3&t=sN2SJ94bYhjohPIE-1',
-            '_blank'
-        );
-    };
 
     const modalHandler = (src: string) => {
         setOpen(true);
@@ -46,7 +36,8 @@ const HunsuProject = () => {
     return (
         <div className="px-4 lg:px-0 w-full flex flex-col h-fit bg-white rounded-lg shadow-lg shadow-sky-950 border pb-14">
             <article>
-                <div className={tw('w-full text-center text-4xl pt-14', aggro.className)}>훈수왕</div>
+                <div className={tw('w-full text-center text-4xl pt-14', aggro.className)}>AI 커뮤니티</div>
+                <div className={tw('w-full text-center text-xl', aggro.className)}>훈수왕</div>
                 <div className="w-full text-center text-gray-500 pb-12">2024.08 - 2024.09 (팀 프로젝트)</div>
             </article>
             <article className="relative flex flex-col lg:flex-row px-2 lg:px-8 gap-4">
@@ -88,70 +79,78 @@ const HunsuProject = () => {
                     <div className="text-center mt-2 text-gray-400 cursor-default select-none">{`${current} / ${count}`}</div>
                 </Carousel>
                 <div className="w-full text-sm md:text-lg">
-                    <section className="mt-4 md:mt-0">
-                        <Dot depths={1}>AI 기반 사용자 Q&A 커뮤니티</Dot>
-                        <Dot depths={1}>
-                            <div className="flex items-center gap-2">
-                                FIGMA 디자인 전체 총괄 및 제작
-                                <FaExternalLinkAlt
-                                    onClick={linkHandler}
-                                    title="FIGMA 확인"
-                                    className="text-rose-600 hover:text-rose-800 cursor-pointer"
-                                />
-                            </div>
+                    <section className="flex flex-col mt-4">
+                        <Dot type="title">주요 역할 및 구현 내용</Dot>
+                        <Dot type="check">프로젝트 리딩 & 일정 관리</Dot>
+                        <Dot type="dot">
+                            <span className="font-semibold">팀장 역할 수행</span>, 개발 일정 조율 및 이슈 해결
                         </Dot>
-                        <Dot depths={1}>
-                            <span className="font-semibold">역할</span>
+                        <Dot type="dot">
+                            <span className="text-highlight">AWS CI/CD 및 Client 인프라 구축</span>, 도메인 연동
                         </Dot>
-                        <Dot depths={2}>
-                            <span className="text-rose-600">프로젝트 일정 관리</span>
+                        <Dot type="dot">
+                            <span className="font-semibold">Figma · Excalidraw 활용</span> → 개발 프로세스 체계화 및
+                            협업 효율 극대화
                         </Dot>
-                        <Dot depths={3}>
-                            <span className="font-semibold">팀장</span>을 담당하여 팀원들과의 프로젝트 일정을 관리
+                        <Dot type="check">이메일 인증 및 비밀번호 찾기 기능 구현</Dot>
+                        <Dot type="dot">회원가입 및 인증 시스템 구축</Dot>
+                        <Dot type="check">Tiptap 기반 Custom Editor & 게시글 시스템</Dot>
+                        <Dot type="dot">
+                            <span className="text-highlight">Markdown 문법 및 코드 포맷 지원, 이미지 첨부 기능</span>{' '}
+                            추가
                         </Dot>
-                        <Dot depths={3}>
-                            도메인 연동 및 <span className="font-semibold">AWS CI/CD Client Infra</span> 구축
+                        <Dot type="dot">단축키 지원 → 사용자 피드백 반영하여 UX 개선</Dot>
+                        <Dot type="dot">게시글 고유 링크 및 공유 기능 구현</Dot>
+                        <Dot type="check">실시간 알림 시스템 (React Query 적용)</Dot>
+                        <Dot type="dot">
+                            기존 새로고침 기반 알림에서 → &nbsp;
+                            <span className="font-semibold">자동 동기화 방식으로 개선</span>
                         </Dot>
-                        <Dot depths={3}>
-                            <span className="font-semibold">Figma</span>와{' '}
-                            <span className="font-semibold">Excalidraw</span>를 활용하여 개발 프로세스를 체계화
+                        <Dot type="dot">
+                            좋아요 · 댓글 알림 <span className="font-semibold">실시간 처리</span>
                         </Dot>
-                        <Dot depths={3}>
-                            프로젝트 <span className="font-semibold">60%</span> 이상 담당
+                        <Dot type="check">어드민 기능 개발</Dot>
+                        <Dot type="dot">게시물 신고 기능 및 경고 3회 이상 ID 정지 시스템 구현</Dot>
+                        <Dot type="dot">
+                            <span className="font-semibold">사용자 통계</span> 및 다중 게시글 삭제 기능 추가
                         </Dot>
-                        <Dot depths={2}>회원가입 / 로그인 시스템 구축</Dot>
-                        <Dot depths={3}>사설 회원가입, 비밀번호 찾기, 이메일 인증 기능 구현</Dot>
-                        <Dot depths={2}>레벨 시스템, 경험치 시스템 구축</Dot>
-                        <Dot depths={3}>사용자 경험치 시스템, 레벨 시스템 구현</Dot>
-                        <Dot depths={2}>
-                            <span className="text-rose-600">사용자 글쓰기 / 수정 / 삭제 구축</span>
+                        <Dot type="check">Figma 기반 UI/UX 디자인 총괄</Dot>
+                        <Dot type="dot">
+                            모던 웹 디자인<span className="text-gray-600">(Disquiet.io 참고)</span> 적용, TailwindCSS
+                            활용
                         </Dot>
-                        <Dot depths={3}>
-                            <span className="font-semibold">Tiptap</span> 를 참고하여 Custom Editor 제작
+                        <Dot type="dot">Framer-motion 애니메이션 적용, 직관적인 인터페이스 구현</Dot>
+                        <Dot type="title">성과 및 배운점</Dot>
+                        <Dot type="diamond">
+                            <span className="font-semibold">React Query 기반 실시간 데이터 동기화</span>, UX 개선 및
+                            성능 최적화
                         </Dot>
-                        <Dot depths={3}>Markdown 문법 및 코드포맷 지원</Dot>
-                        <Dot depths={3}>
-                            <span className="font-semibold">이미지 첨부</span> 기능 지원
+                        <Dot type="diamond">
+                            <span className="font-semibold">Tiptap 기반 Custom Editor 제작</span>, 온라인 에디터 제작
+                            기술 습득
                         </Dot>
-                        <Dot depths={3}>게시글별 고유 링크 및 공유 기능 구현</Dot>
-                        <Dot depths={3}>간단한 단축키 및 사용자 UX 개선</Dot>
-                        <Dot depths={2}>
-                            <span className="text-rose-600">사용자 실시간 알림 기능 구축</span>
+                        <Dot type="diamond">
+                            <span className="font-semibold">프롬프트 엔지니어링 활용</span>, AI 훈수 시스템의 응답 품질
+                            향상
                         </Dot>
-                        <Dot depths={3}>React-query의 Refetch를 활용하여 댓글 / 좋아요 알림 구현</Dot>
-                        <Dot depths={2}>
-                            <span className="text-rose-600">어드민 페이지 기능 구축</span>
-                        </Dot>
-                        <Dot depths={3}>게시물 신고 기능 구현</Dot>
-                        <Dot depths={3}>Admin 경고 구현, 경고 3회이상시 정지처리</Dot>
-                        <Dot depths={3}>Admin 통계 구현, 사용자 통계 정보 확인</Dot>
-                        <Dot depths={3}>Admin 관리 구현, 사용자 게시글 관리</Dot>
-                        <button
-                            onClick={detailHandler}
-                            className="mt-4 hover:bg-slate-700 transition w-[200px] py-1 px-4 rounded-sm bg-black text-white"
-                        >
-                            자세히 보기
-                        </button>
+                        <div className="gap-2 flex">
+                            <Link
+                                href={'https://plaid-plow-0e3.notion.site/Hunsuking-1a94c7349b4c8063bb9ac7b8180a860c'}
+                                target="_blank"
+                                className="hover:bg-slate-700 transition w-[150px] py-1 px-4 rounded-sm bg-black text-white text-center mt-4"
+                            >
+                                자세히 보기
+                            </Link>
+                            <Link
+                                href={
+                                    'https://www.figma.com/design/GUiUSjlhjMjPZkCoD51F0S/%ED%9B%88%EC%88%98%EC%99%95?node-id=2-3&t=sN2SJ94bYhjohPIE-1'
+                                }
+                                target="_blank"
+                                className="hover:bg-stone-600 transition w-[150px] py-1 px-4 rounded-sm bg-stone-300 text-center mt-4 hover:text-white flex gap-2 justify-center items-center"
+                            >
+                                FIGMA
+                            </Link>
+                        </div>
                         <section className="flex flex-col mt-4 gap-4">
                             <div className="border-b w-full"></div>
                             <section className="flex flex-col lg:flex-row gap-2 items-start">
