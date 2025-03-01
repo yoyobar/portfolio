@@ -4,6 +4,7 @@ import './globals.css';
 import { pretendard } from '@/util/fonts';
 import Header from '@/components/header';
 import { Toaster } from '@/components/ui/toaster';
+import PrintStyles from '@/components/PrintStyles';
 
 export const metadata: Metadata = {
     metadataBase: new URL(meta.url),
@@ -27,6 +28,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="ko" className={`${pretendard.className}`}>
+            <head>
+                <PrintStyles />
+            </head>
             <body>
                 <Toaster />
                 <Header />

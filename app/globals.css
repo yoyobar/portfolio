@@ -21,3 +21,11 @@
 .text-highlight {
     @apply font-semibold text-rose-600;
 }
+
+@media print {
+    svg,
+    canvas {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+}
