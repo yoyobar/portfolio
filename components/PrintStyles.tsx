@@ -18,7 +18,7 @@ export default function PrintStyles() {
 
                 /* 불필요한 요소 숨기기 */
                 header,
-                .no-print {
+                aside .no-print {
                     display: none !important;
                 }
 

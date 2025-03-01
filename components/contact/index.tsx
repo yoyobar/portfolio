@@ -93,7 +93,7 @@ const Contact = () => {
         });
     };
     return (
-        <>
+        <aside>
             <div className="z-10 relative w-full py-16 flex flex-col justify-center items-center h-fit">
                 <div className="px-2 md:px-10 mb-20 max-w-[1200px] w-full flex flex-col gap-10 items-center justify-center">
                     <div className="flex gap-2 relative justify-center items-center">
@@ -166,7 +166,7 @@ const Contact = () => {
                     </Form>
                 </div>
             </div>
-        </>
+        </aside>
     );
 };
 

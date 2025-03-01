@@ -56,7 +56,7 @@ const Header = () => {
     };
 
     return (
-        <>
+        <header>
             <div
                 className={tw(
                     'header select-none px-10 fixed lg:px-[130px] z-50 w-full h-16 flex items-center justify-between bg-stone-800 bg-opacity-75',
@@ -140,7 +140,7 @@ const Header = () => {
                     </div>
                 )}
             </motion.div>
-        </>
+        </header>
     );
 };
 
